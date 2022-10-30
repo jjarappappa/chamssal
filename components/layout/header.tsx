@@ -64,6 +64,7 @@ function Header() {
           </>
         )}
       </>
+      {isOpenMenu && <div className="root_open"></div>}
     </div>
   );
 }
