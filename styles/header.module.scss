@@ -1,4 +1,33 @@
 .header{
     height: 112px;
     width: 100%;
+    display: flex;
+    border: 2px solid #EAEAEA;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 136px;
+    font-size: 10px;
+    .logo{
+        width: 94.89px;
+        height: 53.46px;
+        cursor: pointer;
+    }
+    .ul{
+        display: flex;
+        list-style: none;
+        gap: 30px;
+        font-size: 2.4em;
+    }
+    .login{
+        border: 1px solid black;
+        background-color: white;
+        width: 120px;
+        height: 53px;
+        border-radius: 60px;
+        font-size: 2.1em;
+        font-weight: bold;
+    }
+    @media screen and (max-width: 1188px) {
+        font-size: 6px;
+    }
 }
