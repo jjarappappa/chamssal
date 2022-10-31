@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import styles from "../../styles/header.module.scss";
 import { AiOutlineMenu } from "react-icons/ai";
 import useMedia from "../../hooks/useMedia";
@@ -10,6 +10,9 @@ import { isOpenMenuState } from "../../store/header/isOpenMenuAtom";
 function Header() {
   const isMobile = useMedia("(min-width: 1188px)");
   const [isOpenMenu, setIsOpenMenu] = useRecoilState(isOpenMenuState);
+  useEffect(() => {
+    setIsOpenMenu(false);
+  }, [isMobile, setIsOpenMenu]);
   return (
     <div>
       {isMobile ? (
@@ -54,17 +57,17 @@ function Header() {
       )}
       <>
         {!isMobile && isOpenMenu && (
-          <>
+          <div className={styles.dropdown}>
             <div className={styles.dropdown_item}>임신육아</div>
             <div className={styles.dropdown_item}>동영상 강좌</div>
             <div className={styles.dropdown_item}>강의 신청</div>
             <div className={styles.dropdown_item}>용품 구매</div>
             <div className={styles.dropdown_item}>커뮤니티</div>
             <div className={styles.dropdown_item}>로그인</div>
-          </>
+          </div>
         )}
       </>
-      {isOpenMenu && <div className="root_open"></div>}
+      {!isMobile && isOpenMenu && <div className="root_open"></div>}
     </div>
   );
 }
