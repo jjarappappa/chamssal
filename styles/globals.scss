@@ -1,5 +1,4 @@
-html,
-body {
+html, body {
   padding: 0;
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
@@ -24,3 +23,18 @@ a {
     background: black;
   }
 }
+
+button{
+  cursor: pointer;
+}
+
+.root_open{
+  background-color: rgba(0, 0, 0, 50%);
+  position: fixed;
+  width: 100%;
+  height: 100%;
+}
+
+// .root{
+
+// }
