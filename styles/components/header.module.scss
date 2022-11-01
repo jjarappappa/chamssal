@@ -2,11 +2,12 @@
 
 .header{
     @include header;
-    height: 112px;
+    height: 10%;
     align-items: center;
     display: flex;
     justify-content: space-between;
     padding: 0 136px;
+    background-color: white;
     .logo{
         cursor: pointer;
     }
@@ -36,6 +37,7 @@
     align-items: center;
     padding: 0 20px;
     // text-align: center;
+    background-color: white;
     position: relative;
     .logo{
         cursor: pointer;
@@ -45,6 +47,13 @@
         cursor: pointer;
         position: absolute;
     }
+}
+
+.root_open{
+    background-color: rgba(0, 0, 0, 50%);
+    position: fixed;
+    width: 100%;
+    height: 100%;
 }
 
 .dropdown{
