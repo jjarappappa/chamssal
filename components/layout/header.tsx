@@ -1,15 +1,17 @@
 import Image from "next/image";
 import Link from "next/link";
 import React, { useEffect, useState } from "react";
-import styles from "../../styles/header.module.scss";
+import styles from "../../styles/components/header.module.scss";
 import { AiOutlineMenu } from "react-icons/ai";
 import useMedia from "../../hooks/useMedia";
 import { useRecoilState } from "recoil";
 import { isOpenMenuState } from "../../store/header/isOpenMenuAtom";
+import { useRouter } from "next/router";
 
 function Header() {
   const isMobile = useMedia("(min-width: 1188px)");
   const [isOpenMenu, setIsOpenMenu] = useRecoilState(isOpenMenuState);
+  const router = useRouter();
   useEffect(() => {
     setIsOpenMenu(false);
   }, [isMobile, setIsOpenMenu]);
@@ -34,7 +36,15 @@ function Header() {
             <li>용품 구매</li>
             <li>커뮤니티</li>
           </ul>
-          <button className={styles.login}>로그인</button>
+          {router.pathname === "/login" ? (
+            <Link href="/signup">
+              <button className={styles.login}>회원가입</button>
+            </Link>
+          ) : (
+            <Link href="/login">
+              <button className={styles.login}>로그인</button>
+            </Link>
+          )}
         </header>
       ) : (
         <header className={styles.mobile_header}>
@@ -63,11 +73,18 @@ function Header() {
             <div className={styles.dropdown_item}>강의 신청</div>
             <div className={styles.dropdown_item}>용품 구매</div>
             <div className={styles.dropdown_item}>커뮤니티</div>
-            <div className={styles.dropdown_item}>로그인</div>
+            <Link href="/login">
+              <div className={styles.dropdown_item}>로그인</div>
+            </Link>
           </div>
         )}
       </>
-      {!isMobile && isOpenMenu && <div className="root_open"></div>}
+      {!isMobile && isOpenMenu && (
+        <div
+          className={styles.root_open}
+          onClick={() => setIsOpenMenu(false)}
+        ></div>
+      )}
     </div>
   );
 }
