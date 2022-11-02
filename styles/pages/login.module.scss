@@ -12,7 +12,6 @@
         width: 567px;
     }
     @media screen and (min-height: 1080px) {
-        
         height: 603px;
     }
     position: absolute;
@@ -24,6 +23,7 @@
     background-color: white;
     border-radius: 30px;
     padding: 36px;
+    z-index: 1;
     h1{    
         font-family: 'SpoqaHanSansNeo-Regular';
         font-weight: 500;
