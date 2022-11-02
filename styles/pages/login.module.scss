@@ -49,14 +49,11 @@
         }
     }
     .button{
+        @include yellowBtn();
         margin-top: 56px;
         width: 100%;
         height: 62.4px;
         border-radius: 30px;
-        background-color: $yellow;
-        border: none;
-        color: white;    
-        font-family: 'SpoqaHanSansNeo-Regular';
         font-size: 28.4px;
     }
     .search{

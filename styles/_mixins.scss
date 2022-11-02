@@ -1,5 +1,21 @@
+@import '_variables';
+
+@font-face {
+    font-family: 'SpoqaHanSansNeo-Regular';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2108@1.1/SpoqaHanSansNeo-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
 @mixin header {
     width: 100%;
     border: 2px solid #EAEAEA;
     font-size: 10px;
+}
+
+@mixin yellowBtn() {
+    background-color: $yellow;
+    border: none;
+    color: white;    
+    font-family: 'SpoqaHanSansNeo-Regular';
 }
