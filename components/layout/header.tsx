@@ -11,7 +11,6 @@ import { useRouter } from "next/router";
 function Header() {
   const isMobile = useMedia("(min-width: 1188px)");
   const [isOpenMenu, setIsOpenMenu] = useRecoilState(isOpenMenuState);
-  console.log(isMobile);
   const router = useRouter();
   useEffect(() => {
     setIsOpenMenu(false);

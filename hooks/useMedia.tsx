@@ -11,7 +11,6 @@ export default function useMedia(mediaQueryString: string) {
 
   useEffect(() => {
     const mediaQueryList = window.matchMedia(mediaQueryString);
-    console.log(mediaQueryList);
     const listener = () => setMatches(mediaQueryList.matches === true ? 1 : -1);
     listener();
     mediaQueryList.addListener(listener);

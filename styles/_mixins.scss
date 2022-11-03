@@ -19,3 +19,15 @@
     color: white;    
     font-family: 'SpoqaHanSansNeo-Regular';
 }
+
+@mixin input($width: 320px, $align: left, $left: 20px){
+    width: $width;
+    height: 78px;
+    background-color: $lightgray;
+    // border: none;
+    border: 1px solid black;
+    text-align: $align;
+    border-radius: 30px;
+    padding-left: $left;
+    font-size: 24px;
+}
