@@ -2,6 +2,7 @@ import "../styles/globals.scss";
 import type { AppProps } from "next/app";
 import Head from "next/head";
 import { RecoilRoot } from "recoil";
+import SnackBar from "../components/alert/SnackBar";
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
@@ -13,6 +14,7 @@ function MyApp({ Component, pageProps }: AppProps) {
       </Head> */}
       <RecoilRoot>
         <Component {...pageProps} />
+        <SnackBar />
       </RecoilRoot>
     </>
   );
