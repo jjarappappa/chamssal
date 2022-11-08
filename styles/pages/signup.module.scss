@@ -3,70 +3,27 @@
     margin: 0 auto;
     position: relative;
     ul{
-        position: relative;
+        position: fixed;
         display: flex;
         flex-direction: column;
         align-items: flex-end;
         justify-content: right;
         // right: 60px;
-        right: 8px;
+        right: calc(8px + 20%);
         li{
+            &:first-child{
+                margin-top: -40px;
+            }
             width: 300px;
+            line-height: 48px;
+            // border: 1px solid black;
             height: 48px;
             background-color: $lightgray;
             padding-left: 20px;
+            cursor: pointer;
         }
     }
-    .item{
-        display: flex;
-        width: 100%;
-        align-items: center;
-        &:first-child{
-            margin-top: 60px;
-        }
-        .name_div{
-            flex: 1 1 0;
-            text-align: center;
-            .name{
-                display: block;
-                text-align: center;
-                margin: 0 auto;
-                width: 150px;
-            }
-        }
-        .inputs{
-            flex: 3 1 0;
-            display: inline-flex;
-            align-items: center;
-            justify-content: space-around;
-            // gap: 20px;
-            .select{
-                display: flex;
-                align-items: center;
-                width: 320px;
-            }
-            .arrow{
-                position: relative;
-                right: 60px;
-                cursor: pointer;
-            }
-            span{
-                font-size: 36px;
-            }
-            .input_short{
-                @include input(200px, left, 20px);
-            }
-            .input_middle{
-                @include input(320px, left, 20px);
-            }
-            .input_long{
-                @include input(400px, left, 20px);
-            }
-            .input_full{
-                @include input(100%, left, 20px);
-            }
-        }
-    }
+    
     .button{
         @include yellowBtn();
         margin-top: 56px;
@@ -76,4 +33,57 @@
         font-size: 28.4px;
     }
 
+
+    .item{
+        display: flex;
+        width: 100%;
+        align-items: center;
+        margin: 20px 0;
+        &:first-child{
+            margin-top: 60px;
+        }
+        .inputs{
+            flex: 3 1 0;
+            display: inline-flex;
+            align-items: center;
+            justify-content: space-between;
+            // gap: 20px;
+            .select{
+                display: flex;
+                align-items: center;
+                width: 320px;
+            }
+            .arrow_down{
+                position: relative;
+                right: 60px;
+                cursor: pointer;
+            }
+            .arrow_up{
+                position: relative;
+                right: 60px;
+                cursor: pointer;
+                transform: rotate(180deg);
+            }
+            span{
+                font-size: 36px;
+            }
+            .input_short{
+                @include input(200px, center, 0);
+            }
+            .input_middle{
+                @include input(320px, left, 20px);
+            }
+            .input_long{
+                @include input(380px, left, 20px);
+            }
+            .input_full{
+                @include input(100%, left, 20px);
+            }
+            input[type="number"]::-webkit-outer-spin-button,
+            input[type="number"]::-webkit-inner-spin-button {
+                -webkit-appearance: none;
+                margin: 0;
+            }
+        }
+    }
 }
