@@ -84,17 +84,19 @@ function SignUp() {
               <input
                 type="text"
                 className={styles.input_middle}
+                {...register("email")}
                 name="email"
-                value={signUpInput.email}
-                onChange={(e) => changeSignUp(e)}
+                // value={signUpInput.email}
+                // onChange={(e) => changeSignUp(e)}
               />
               <span>@</span>
               <div className={styles.select}>
                 <input
                   className={styles.input_middle}
                   placeholder="직접 입력"
-                  value={domain}
-                  onChange={(e) => setDomain(e.target.value)}
+                  {...register("domain")}
+                  // value={domain}
+                  // onChange={(e) => setDomain(e.target.value)}
                   onFocus={() => setIsOpenSelect(false)}
                 />
                 <span
@@ -127,9 +129,10 @@ function SignUp() {
               <input
                 type="password"
                 className={styles.input_long}
+                {...register("password")}
                 name="password"
-                value={signUpInput.password}
-                onChange={(e) => changeSignUp(e)}
+                // value={signUpInput.password}
+                // onChange={(e) => changeSignUp(e)}
               />
             </div>
           </div>
@@ -139,9 +142,10 @@ function SignUp() {
               <input
                 type="password"
                 className={styles.input_long}
+                {...register("confirmPassword")}
                 name="confirmPassword"
-                value={signUpInput.confirmPassword}
-                onChange={(e) => changeSignUp(e)}
+                // value={signUpInput.confirmPassword}
+                // onChange={(e) => changeSignUp(e)}
               />
             </div>
           </div>
@@ -151,24 +155,27 @@ function SignUp() {
               <input
                 type="number"
                 className={styles.input_short}
+                {...register("phone1")}
                 name="phone"
-                value={phone[0]}
+                // value={phone[0]}
                 onChange={(e) => changePhone(0, e, 3)}
               />
               <span>-</span>
               <input
                 type="number"
                 className={styles.input_short}
+                {...register("phone2")}
                 name="phone"
-                value={phone[1]}
+                // value={phone[1]}
                 onChange={(e) => changePhone(1, e, 4)}
               />
               <span>-</span>
               <input
                 type="number"
                 className={styles.input_short}
+                {...register("phone3")}
                 name="phone"
-                value={phone[2]}
+                // value={phone[2]}
                 onChange={(e) => changePhone(2, e, 4)}
               />
             </div>
@@ -179,8 +186,9 @@ function SignUp() {
               <input
                 type="number"
                 className={styles.input_short}
+                {...register("birth1")}
                 name="birth"
-                value={birth[0]}
+                // value={birth[0]}
                 onChange={(e) => changeBirth(0, e, 4)}
                 placeholder="yyyy"
               />
@@ -188,8 +196,9 @@ function SignUp() {
               <input
                 type="number"
                 className={styles.input_short}
+                {...register("birth2")}
                 name="birth"
-                value={birth[1]}
+                // value={birth[1]}
                 onChange={(e) => changeBirth(1, e, 2)}
                 placeholder="mm"
               />
@@ -197,11 +206,11 @@ function SignUp() {
               <input
                 type="number"
                 className={styles.input_short}
+                {...register("birth3")}
                 name="birth"
-                value={birth[2]}
+                // value={birth[2]}
                 onChange={(e) => changeBirth(2, e, 2)}
                 placeholder="dd"
-                maxLength={4}
               />
             </div>
           </div>
@@ -211,9 +220,10 @@ function SignUp() {
               <input
                 type="name"
                 className={styles.input_long}
+                {...register("name")}
                 name="name"
-                value={signUpInput.name}
-                onChange={(e) => changeSignUp(e)}
+                // value={signUpInput.name}
+                // onChange={(e) => changeSignUp(e)}
               />
             </div>
           </div>
@@ -223,9 +233,10 @@ function SignUp() {
               <input
                 type="nickname"
                 className={styles.input_long}
+                {...register("nickname")}
                 name="nickname"
-                value={signUpInput.nickname}
-                onChange={(e) => changeSignUp(e)}
+                // value={signUpInput.nickname}
+                // onChange={(e) => changeSignUp(e)}
               />
             </div>
           </div>
@@ -235,9 +246,10 @@ function SignUp() {
               <input
                 type="text"
                 className={styles.input_long}
+                {...register("postcode")}
                 name="postcode"
-                value={signUpInput.nickname}
-                onChange={(e) => changeSignUp(e)}
+                // value={signUpInput.nickname}
+                // onChange={(e) => changeSignUp(e)}
                 readOnly
                 placeholder="우편번호"
               />
