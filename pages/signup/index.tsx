@@ -280,7 +280,7 @@ function SignUp() {
               />
             </div>
           </div>
-          <input type="submit" />
+          <input type="submit" className={styles.button} value="회원가입" />
         </form>
       </div>
     </div>
