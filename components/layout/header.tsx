@@ -1,11 +1,11 @@
 import Image from "next/image";
 import Link from "next/link";
 import React, { useEffect, useState } from "react";
-import styles from "../../styles/components/header.module.scss";
+import styles from "../../styles/components/layout/header.module.scss";
 import { AiOutlineMenu } from "react-icons/ai";
 import useMedia from "../../hooks/useMedia";
 import { useRecoilState } from "recoil";
-import { isOpenMenuState } from "../../store/header/isOpenMenuAtom";
+import { isOpenMenuState } from "../../store/layout/isOpenMenuAtom";
 import { useRouter } from "next/router";
 
 function Header() {
@@ -17,7 +17,7 @@ function Header() {
   }, [isMobile, setIsOpenMenu]);
   return (
     <div>
-      {isMobile ? (
+      {isMobile === 1 ? (
         <header className={styles.header}>
           <Link href="/">
             <span className={styles.logo}>
@@ -46,7 +46,7 @@ function Header() {
             </Link>
           )}
         </header>
-      ) : (
+      ) : isMobile === -1 ? (
         <header className={styles.mobile_header}>
           <AiOutlineMenu
             size={40}
@@ -64,6 +64,8 @@ function Header() {
             </span>
           </Link>
         </header>
+      ) : (
+        <header />
       )}
       <>
         {!isMobile && isOpenMenu && (

@@ -1,4 +1,4 @@
-import {useEffect, useState} from "react";
+import { useEffect, useState } from "react";
 
 /**
  * Modified from link below
@@ -7,15 +7,15 @@ import {useEffect, useState} from "react";
  * @returns {unknown}
  */
 export default function useMedia(mediaQueryString: string) {
-  const [matches, setMatches] = useState(false);
+  const [matches, setMatches] = useState(0);
 
   useEffect(() => {
     const mediaQueryList = window.matchMedia(mediaQueryString);
-    const listener = () => setMatches(!!mediaQueryList.matches);
+    const listener = () => setMatches(mediaQueryList.matches === true ? 1 : -1);
     listener();
     mediaQueryList.addListener(listener);
     return () => mediaQueryList.removeListener(listener);
-  }, [mediaQueryString])
+  }, [mediaQueryString]);
 
   return matches;
 }
