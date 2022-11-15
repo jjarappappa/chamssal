@@ -16,6 +16,9 @@
         list-style: none;
         gap: 30px;
         font-size: 2.4em;
+        li{
+            cursor: pointer;
+        }
     }
     .login{
         border: 1px solid black;

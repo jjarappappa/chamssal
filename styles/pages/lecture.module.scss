@@ -1,0 +1,9 @@
+.lecture{
+    display: grid;
+    gap: 24px;
+    grid-template-columns: repeat(4, 1fr);
+    justify-content: center;
+    margin: 36px auto;
+    // margin: 36px 150px;
+    width: 80%;
+}
