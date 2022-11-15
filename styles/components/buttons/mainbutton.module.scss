@@ -1,0 +1,37 @@
+
+@import '../../variables';
+
+.Mainbuttonmain {
+    padding: 0 400px;
+    .joinbutton {
+        background-color: #F3B376;
+    }
+    .reviewbutton{
+        background-color: #ACADEB;
+    }
+    .informationbutton{
+        background-color: #97DFB0;
+    }
+    .eventbutton{
+        background-color: #89CFFA;
+    }
+    button {
+        padding: 10px;
+        border: none;
+        border-radius: 15px;
+        width: 120px;
+        div{
+            img{
+                width: 60px;
+            
+            }
+            padding-bottom: 5px;
+        }
+
+        span {
+            
+            color: white;
+            font-size: 18px;
+        }
+    }
+}
