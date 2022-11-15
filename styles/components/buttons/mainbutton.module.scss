@@ -3,6 +3,8 @@
 
 .Mainbuttonmain {
     padding: 0 400px;
+    display: flex;
+    justify-content: space-between;
     .joinbutton {
         background-color: #F3B376;
     }
