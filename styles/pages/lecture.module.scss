@@ -1,0 +1,22 @@
+.lecture{
+    display: grid;
+    // display: flex;
+    gap: 24px;
+    // flex-flow: row wrap;
+    grid-template-columns: repeat(4, 1fr);
+    background-color: $background;
+    // justify-content: flex-start;
+    margin: 36px auto;
+    // margin: 36px 150px;
+    width: 80%;
+    @media screen and (max-width: 1000px){
+        grid-template-columns: repeat(3, 1fr);
+    }
+    @media screen and (max-width: 768px) {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    @media screen and (max-width: 568px) {
+        display: flex;
+        flex-direction: column;
+    }
+}

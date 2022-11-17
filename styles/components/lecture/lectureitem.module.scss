@@ -1,0 +1,60 @@
+.lecture{
+    // width: 285.5px;
+    // height: 400px;
+    // justify-content: center;
+    // border: 1px solid black;
+    border-radius: 20px 20px 0 0;
+    flex: 240px 1 0%;
+    cursor: pointer;
+    .img{
+        width: 100%;
+        // height: ;
+        position: relative;
+        border-radius: 20px 20px 0 0;
+        &::after{
+            display: block;
+            content: "";
+            padding-bottom: 100%;
+        }
+    }
+    .items{
+        padding: 10px;
+        .location{
+            color: $mediumgray;
+            font-size: 15px;
+        }
+        .title{
+            margin: 10px 0 20px 0;
+            font-weight: normal;
+            font-size: 20px;
+        }
+        .bottom{
+            display: flex;
+            justify-content: space-between;
+            .date{
+                color: $mediumgray;
+            }
+            .d_day{
+                color: $coral;
+            }
+        }
+    }
+    @media screen and (max-width: 568px) {
+        border-radius: 15px;
+        .title{
+            margin-bottom: 10px !important;
+        }
+        .items{
+            padding: 20px;
+        }
+        .img{
+            width: 100%;
+            height: 130px;
+            position: relative;
+            border-radius: 20px 20px 0 0;
+            &::after{
+                padding-bottom: 0%;
+            }
+        }
+    }
+}
