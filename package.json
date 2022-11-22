@@ -23,7 +23,8 @@
     "react-icons": "^4.6.0",
     "react-responsive": "^9.0.0",
     "recoil": "^0.7.6",
-    "sass": "^1.55.0"
+    "sass": "^1.55.0",
+    "swiper": "^8.4.4"
   },
   "devDependencies": {
     "@types/node": "18.11.5",
