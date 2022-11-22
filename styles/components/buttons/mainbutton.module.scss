@@ -2,7 +2,9 @@
 @import '../../variables';
 
 .Mainbuttonmain {
-    padding: 0 400px;
+    width: 45vw;
+    position: relative;
+    top: 10px;
     display: flex;
     justify-content: space-between;
     .joinbutton {
@@ -37,3 +39,13 @@
         }
     }
 }
+
+
+@media screen and (max-width: 600px) {
+    #button{
+        span{
+            display: none;
+        }
+    }    
+}
+  
