@@ -5,13 +5,16 @@ import Header from "../../../components/layout/header";
 import Title from "../../../components/layout/title";
 import LectureLabel from "../../../components/lecture/LectureLabel";
 import styles from "../../../styles/pages/lectureContent.module.scss";
+import useMedia from "../../../hooks/useMedia";
 
 function LectureContent() {
   const router = useRouter();
   const { data } = router.query;
+  const isMobile = useMedia("(min-width: 1188px)");
 
-//   console.log(data);
-//   const item = JSON.parse(data); // 문자를 array로
+  //   console.log(data);
+  //   const item = JSON.parse(data); // 문자를 array로
+  console.log(isMobile);
   return (
     <div>
       <Head>
@@ -19,7 +22,7 @@ function LectureContent() {
       </Head>
       <Header />
       <div className="background" />
-      <Title>{"앙 기모찌"}</Title>
+      <Title>{"제목"}</Title>
       <div className={styles.lecture}>
         <div className={styles.lecture_info}>
           <LectureLabel>일시</LectureLabel>
@@ -47,10 +50,9 @@ function LectureContent() {
         </div>
         <hr />
         <div></div>
-        <div>
-          {/* <Postcode>신청하기</Postcode> */}
-          <button className={styles.button}>신청하기</button>
-        </div>
+      </div>
+      <div className={styles.lecture}>
+        <button className={styles.button}>신청하기</button>
       </div>
     </div>
   );
