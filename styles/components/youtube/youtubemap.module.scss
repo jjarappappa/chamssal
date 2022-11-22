@@ -1,0 +1,19 @@
+.youtubecomponent {
+    width: 30vw;
+    .youtubeimage {
+    }
+    .youtubetitle{
+        font-size: 20px;
+    }
+    &:hover{
+        cursor: pointer;
+    }
+    .youtubetitletit{
+        position: relative;
+        top: 5px;
+        .youtubetitle{
+            font-size: 20px;
+            font-weight: 400;
+        }
+    }
+}

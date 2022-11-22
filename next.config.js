@@ -9,7 +9,7 @@ const nextConfig = {
     prependData: `@import "styles/_mixins.scss"; @import "styles/_variables.scss";`,
   },
   images:{
-    domains: ['ifh.cc']
+    domains: ['ifh.cc','img.youtube.com']
   }
 }
 

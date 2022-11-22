@@ -2,11 +2,11 @@
 @import '../../variables';
 
 .Mainbuttonmain {
-    width: 45vw;
+    width: 50vw;
     position: relative;
     top: 10px;
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     .joinbutton {
         background-color: #F3B376;
         &:hover{
@@ -28,7 +28,7 @@
     .eventbutton{
         background-color: #89CFFA;
         &:hover{
-            background-color: #7AB28D;
+            background-color: #6FA7C6;
         }
     }
     button {
