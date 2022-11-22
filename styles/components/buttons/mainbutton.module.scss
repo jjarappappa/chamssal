@@ -9,15 +9,27 @@
     justify-content: space-between;
     .joinbutton {
         background-color: #F3B376;
+        &:hover{
+            background-color: #C28F5E;
+        }
     }
     .reviewbutton{
         background-color: #ACADEB;
+        &:hover{
+            background-color: #8A8ABC;
+        }
     }
     .informationbutton{
         background-color: #97DFB0;
+        &:hover{
+            background-color: #7AB28D;
+        }
     }
     .eventbutton{
         background-color: #89CFFA;
+        &:hover{
+            background-color: #7AB28D;
+        }
     }
     button {
         padding: 10px;
