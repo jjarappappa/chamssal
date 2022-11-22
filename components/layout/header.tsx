@@ -32,7 +32,9 @@ function Header() {
           <ul className={styles.ul}>
             <li>임신육아</li>
             <li>동영상 강좌</li>
-            <li>강의 신청</li>
+            <Link href="/lecture">
+              <li>강의 신청</li>
+            </Link>
             <li>용품 구매</li>
             <li>커뮤니티</li>
           </ul>
