@@ -5,6 +5,7 @@ import styles from "../../styles/components/banner/banner.module.scss";
 import "swiper/swiper-bundle.min.css";
 import "swiper/swiper.min.css";
 import { style } from "@mui/system";
+import Image from "next/image";
 const Banner = () => {
   SwiperCore.use([Navigation, Autoplay, EffectFade]);
   return (
@@ -17,7 +18,14 @@ const Banner = () => {
       >
         {BannerData.banners.map((b, index) => (
           <SwiperSlide className={styles.slider} key={index}>
-            <img src={b.img} className={styles.bannerimage} />
+            <span className={styles.bannerimagespan}>
+              <Image
+                src={b.img}
+                className={styles.bannerimage}
+                height={350}
+                width={1000}
+              />
+            </span>
           </SwiperSlide>
         ))}
       </Swiper>
