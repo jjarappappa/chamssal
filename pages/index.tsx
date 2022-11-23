@@ -4,7 +4,7 @@ import Head from "next/head";
 import Mainbutton from "../components/buttons/Mainbutton";
 import Banner from "../components/banner/banner";
 import styles from '../styles/pages/index.module.scss';
-
+import Youtube from "../components/youtube/youtube";
 const Home: NextPage = () => {
   return (
     <body>
@@ -15,6 +15,9 @@ const Home: NextPage = () => {
       <Banner />
       <div className={styles.mainbutton}>
         <Mainbutton />
+      </div>
+      <div className={styles.realyoutube}>
+      <Youtube/>
       </div>
     </body>
   );
