@@ -4,11 +4,6 @@ import Head from "next/head";
 import styles from "../../styles/pages/login.module.scss";
 import { useForm } from "react-hook-form";
 
-interface loginInput {
-  email: string;
-  password: string;
-}
-
 const Login: NextPage = () => {
   const {
     register,

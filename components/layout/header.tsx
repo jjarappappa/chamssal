@@ -70,11 +70,13 @@ function Header() {
         <header />
       )}
       <>
-        {!isMobile && isOpenMenu && (
+        {isMobile === -1 && isOpenMenu && (
           <div className={styles.dropdown}>
             <div className={styles.dropdown_item}>임신육아</div>
             <div className={styles.dropdown_item}>동영상 강좌</div>
-            <div className={styles.dropdown_item}>강의 신청</div>
+            <Link href="/lecture">
+              <div className={styles.dropdown_item}>강의 신청</div>
+            </Link>
             <div className={styles.dropdown_item}>용품 구매</div>
             <div className={styles.dropdown_item}>커뮤니티</div>
             <Link href="/login">
@@ -83,7 +85,7 @@ function Header() {
           </div>
         )}
       </>
-      {!isMobile && isOpenMenu && (
+      {isMobile === -1 && isOpenMenu && (
         <div
           className={styles.root_open}
           onClick={() => setIsOpenMenu(false)}

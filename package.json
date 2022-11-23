@@ -24,7 +24,7 @@
     "react-responsive": "^9.0.0",
     "recoil": "^0.7.6",
     "sass": "^1.55.0",
-    "swiper": "^8.4.4"
+    "swiper": "^8.4.5"
   },
   "devDependencies": {
     "@types/node": "18.11.5",
