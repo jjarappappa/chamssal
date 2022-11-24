@@ -16,12 +16,11 @@ function LectureContent() {
   //   const item = JSON.parse(data); // 문자를 array로
   console.log(isMobile);
   return (
-    <div>
+    <div className="background">
       <Head>
         <title>회원가입</title>
       </Head>
       <Header />
-      <div className="background" />
       <Title>{"제목"}</Title>
       <div className={styles.lecture}>
         <div className={styles.lecture_info}>

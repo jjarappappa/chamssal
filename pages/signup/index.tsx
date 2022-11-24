@@ -64,7 +64,7 @@ function SignUp() {
   // console.log(errors?.)
 
   return (
-    <div>
+    <div className="background">
       <Head>
         <title>회원가입</title>
       </Head>
@@ -78,7 +78,6 @@ function SignUp() {
           })
         }
       /> */}
-      <div className="background" />
       <Title>회원가입</Title>
       <div className={styles.signup}>
         <form
