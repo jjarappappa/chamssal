@@ -33,7 +33,9 @@ function Header() {
             <Link href="/info">
               <li>임신육아</li>
             </Link>
-            <li>동영상 강좌</li>
+            <Link href="/youtube">
+              <li>동영상 강좌</li>
+            </Link>
             <Link href="/lecture">
               <li>강의 신청</li>
             </Link>
@@ -77,7 +79,9 @@ function Header() {
             <Link href="/info">
               <div className={styles.dropdown_item}>임신육아</div>
             </Link>
-            <div className={styles.dropdown_item}>동영상 강좌</div>
+            <Link href="/youtube">
+              <div className={styles.dropdown_item}>동영상 강좌</div>
+            </Link>
             <Link href="/lecture">
               <div className={styles.dropdown_item}>강의 신청</div>
             </Link>
