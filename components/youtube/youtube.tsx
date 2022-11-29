@@ -1,14 +1,7 @@
 import styles from "../../styles/components/youtube/youtube.module.scss";
 import Youtubemap from "./youtubemap";
 import YoutubeData from "./youtube.json";
-export interface IProps {
-  detail: {
-    id: string;
-    title: string;
-    thumbnailUrl: string;
-    url: string;
-  };
-}
+
 function Youtube() {
   return (
     <>
