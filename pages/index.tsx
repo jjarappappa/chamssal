@@ -7,7 +7,7 @@ import styles from "../styles/pages/index.module.scss";
 import Youtube from "../components/youtube/youtube";
 const Home: NextPage = () => {
   return (
-    <>
+    <div className="background">
       <Head>
         <title>아이맘 행복교실</title>
       </Head>
@@ -19,7 +19,7 @@ const Home: NextPage = () => {
       <div className={styles.realyoutube}>
         <Youtube />
       </div>
-    </>
+    </div>
   );
 };
 
