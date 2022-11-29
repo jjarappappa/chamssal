@@ -1,0 +1,22 @@
+@import '_mixins', '_variables';
+
+.info{
+    width: 90%;
+    margin: 0 auto;
+    .title{
+        font-family: 'Spoqa Han Sans Neo', 'sans-serif';
+        display: flex;
+        align-items: center;
+        gap: 20px;
+        font-weight: 500;
+        font-size: 32px;
+        .title_selected{
+            cursor: pointer;
+            color: $darkblack;
+        }
+        .title_unselected{
+            cursor: pointer;
+            color: $mediumgray;
+        }
+    }
+}

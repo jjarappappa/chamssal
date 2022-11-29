@@ -12,12 +12,11 @@ const Login: NextPage = () => {
   } = useForm();
 
   return (
-    <div>
+    <div className="background">
       <Head>
         <title>로그인</title>
       </Head>
       <Header />
-      <div className="background"></div>
       <div className={styles.login}>
         <h1>로그인</h1>
         <form onSubmit={handleSubmit((data) => console.log(data))}>
