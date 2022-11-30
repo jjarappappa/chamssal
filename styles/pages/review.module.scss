@@ -1,0 +1,15 @@
+.reviewall{
+    background-color: #F0F0F0;
+    height: 100vh;
+}
+.reviewgang{
+    background-color: #F0F0F0;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    .reviewtxt{
+        p{
+            font-size: 30px;
+        }
+    }
+}

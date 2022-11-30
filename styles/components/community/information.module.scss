@@ -1,0 +1,35 @@
+
+.reviewinformation{
+    padding-bottom: 10px;
+    .reviewinfo{
+        background-color: white;
+        border-radius: 15px;
+        padding: 18px;
+        width: 70vw;
+        display: flex;
+        justify-content: space-between;
+        .leftspan{
+            span{
+                font-size: 25px;
+            }
+        }
+        .rightspan{
+            span{
+                font-size: 18px;
+                position: relative;
+                top: 5px;
+            }
+            .name{
+                position: relative;
+                right: 10px;
+
+            }
+            .day{
+            }
+        }
+        &:hover{
+            cursor: pointer;
+            background-color: rgb(237, 237, 237);
+        }
+    }
+}
