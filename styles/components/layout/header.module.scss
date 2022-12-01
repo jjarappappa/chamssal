@@ -79,14 +79,32 @@
         text-align: center;
         border-bottom: 1px solid #EAEAEA;
         background-color: white;
-        position: relative;
         z-index: 100;
         cursor: pointer;
+        &:hover{
+            background-color: rgb(237, 239, 241);
+        }
         &:last-child{
             height: 80px;
             line-height: 80px;
             border-radius: 0 0 40px 40px;
             background-color: white;
+        }
+    }
+    .dropdown_item_short{
+        width: 100%;
+        height: 40px;
+        line-height: 40px;
+        text-align: center;
+        border-bottom: 1px solid #EAEAEA;
+        background-color: white;
+        z-index: 100;
+        cursor: pointer;
+        &:hover{
+            background-color: rgb(237, 239, 241);
+        }
+        &:first-child{
+            margin-top: 50px;
         }
     }
 }

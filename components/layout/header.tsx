@@ -16,6 +16,8 @@ function Header() {
   const router = useRouter();
   useEffect(() => {
     setIsOpenMenu(false);
+    setIsOpenCommunityMenu(false);
+    document.body.style.overflow = "unset";
   }, [isMobile, setIsOpenMenu]);
   return (
     <>
@@ -114,7 +116,12 @@ function Header() {
           <AiOutlineMenu
             size={40}
             className={styles.menu}
-            onClick={() => setIsOpenMenu((prev) => !prev)}
+            onClick={() => {
+              setIsOpenMenu((prev) => !prev);
+              !isOpenMenu
+                ? (document.body.style.overflow = "hidden")
+                : (document.body.style.overflow = "unset");
+            }}
           />
           <Link href="/">
             <span className={styles.logo}>
@@ -142,10 +149,33 @@ function Header() {
             <Link href="/lecture">
               <div className={styles.dropdown_item}>강의 신청</div>
             </Link>
-            <div className={styles.dropdown_item}>용품 구매</div>
-            <div className={styles.dropdown_item}>커뮤니티</div>
+            <div className={styles.dropdown_item}>
+              용품 구매
+              {isOpenCommunityMenu && (
+                <>
+                  <div className={styles.dropdown_item_short}>이벤트</div>
+                  <div className={styles.dropdown_item_short}>당첨자 발표</div>
+                  <div className={styles.dropdown_item_short}>강의 후기</div>
+                  <div className={styles.dropdown_item_short}>
+                    자주 묻는 질문
+                  </div>
+                  <div className={styles.dropdown_item_short}>제휴문의</div>
+                </>
+              )}
+            </div>
+            <div
+              className={styles.dropdown_item}
+              onClick={() => setIsOpenCommunityMenu((prev) => !prev)}
+            >
+              커뮤니티
+            </div>
             <Link href="/login">
-              <div className={styles.dropdown_item}>로그인</div>
+              <div
+                className={styles.dropdown_item}
+                style={{ marginTop: isOpenCommunityMenu ? "200px" : "0" }}
+              >
+                로그인
+              </div>
             </Link>
           </div>
         )}
