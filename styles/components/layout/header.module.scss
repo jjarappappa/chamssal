@@ -2,7 +2,7 @@
 
 .header{
     @include header;
-    height: 10%;
+    height: 98px;
     align-items: center;
     display: flex;
     justify-content: space-between;
@@ -14,10 +14,18 @@
     .ul{
         display: flex;
         list-style: none;
-        gap: 30px;
+        gap: 10px;
         font-size: 2.4em;
+        margin: 0;
         li{
             cursor: pointer;
+            display: inline-block;
+            border-radius: 15px;
+            padding: 10px;
+            &:hover{
+                background-color: rgba(208,215,222,0.32);
+                transition: .12s ease-out;
+            }
         }
     }
     .login{
@@ -81,4 +89,17 @@
             background-color: white;
         }
     }
+}
+
+.triangle{
+    border-top: 10px solid transparent;;
+    border-left: 20px solid transparent;
+    border-right: 20px solid transparent;
+    border-bottom: 22px solid rgb(237, 239, 241);
+    position: absolute;
+    left: 50%;
+    transform:translate(-50%,0);
+    top: 42.8px;
+    z-index: 300;
+    cursor: default;
 }

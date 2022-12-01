@@ -7,51 +7,108 @@ import useMedia from "../../hooks/useMedia";
 import { useRecoilState } from "recoil";
 import { isOpenMenuState } from "../../store/layout/isOpenMenuAtom";
 import { useRouter } from "next/router";
+import { ListItem, List, Divider, ListItemText } from "@mui/material";
 
 function Header() {
-  const isMobile = useMedia("(min-width: 1188px)");
+  const isMobile = useMedia("(min-width: 1200px)");
   const [isOpenMenu, setIsOpenMenu] = useRecoilState(isOpenMenuState);
+  const [isOpenCommunityMenu, setIsOpenCommunityMenu] = useState(false);
   const router = useRouter();
   useEffect(() => {
     setIsOpenMenu(false);
   }, [isMobile, setIsOpenMenu]);
   return (
-    <div>
+    <>
       {isMobile === 1 ? (
-        <header className={styles.header}>
-          <Link href="/">
-            <span className={styles.logo}>
-              <Image
-                src="/images/logo.png"
-                alt="로고"
-                width={94.89}
-                height={53.46}
-              />
-            </span>
-          </Link>
-          <ul className={styles.ul}>
-            <Link href="/info">
-              <li>임신육아</li>
+        <>
+          <header className={styles.header}>
+            <Link href="/">
+              <span className={styles.logo}>
+                <Image
+                  src="/images/logo.png"
+                  alt="로고"
+                  width={94.89}
+                  height={53.46}
+                />
+              </span>
             </Link>
-            <Link href="/youtube">
-              <li>동영상 강좌</li>
-            </Link>
-            <Link href="/lecture">
-              <li>강의 신청</li>
-            </Link>
-            <li>용품 구매</li>
-            <li>커뮤니티</li>
-          </ul>
-          {router.pathname === "/login" ? (
-            <Link href="/signup">
-              <button className={styles.login}>회원가입</button>
-            </Link>
-          ) : (
-            <Link href="/login">
-              <button className={styles.login}>로그인</button>
-            </Link>
-          )}
-        </header>
+            <ul className={styles.ul}>
+              <Link href="/info">
+                <li>임신육아</li>
+              </Link>
+              <Link href="/youtube">
+                <li>동영상 강좌</li>
+              </Link>
+              <Link href="/lecture">
+                <li>강의 신청</li>
+              </Link>
+              <li>용품 구매</li>
+              <li
+                onMouseOver={() => setIsOpenCommunityMenu(true)}
+                onMouseLeave={() => setIsOpenCommunityMenu(false)}
+                style={{ position: "relative" }}
+              >
+                커뮤니티
+                {isOpenCommunityMenu && (
+                  <>
+                    <div
+                      className={styles.triangle}
+                      onMouseOver={() => setIsOpenCommunityMenu(true)}
+                      onMouseLeave={() => setIsOpenCommunityMenu(false)}
+                    ></div>
+                    <List
+                      sx={{
+                        width: "150px",
+                        position: "absolute",
+                        left: "50%",
+                        transform: "translate(-50%,0)",
+                        top: "74.8px",
+                        zIndex: "200",
+                        backgroundColor: "rgb(237,239,241)",
+                        borderRadius: "10px",
+                        display: "block",
+                      }}
+                      onMouseOver={() => setIsOpenCommunityMenu(true)}
+                      onMouseLeave={() => setIsOpenCommunityMenu(false)}
+                      component="nav"
+                      aria-label="mailbox folders"
+                    >
+                      <ListItem button sx={{ textAlign: "center" }}>
+                        <ListItemText primary="이벤트" />
+                      </ListItem>
+                      <Divider light />
+                      <ListItem button sx={{ textAlign: "center" }}>
+                        <ListItemText primary="당첨자 발표" />
+                      </ListItem>
+                      <Divider light />
+                      <ListItem button sx={{ textAlign: "center" }}>
+                        <ListItemText primary="강의 후기" />
+                      </ListItem>
+                      <Divider light />
+                      <ListItem button sx={{ textAlign: "center" }}>
+                        <ListItemText primary="자주 묻는 질문" />
+                      </ListItem>
+                      <Divider light />
+                      <ListItem button sx={{ textAlign: "center" }}>
+                        <ListItemText primary="제휴 문의" />
+                      </ListItem>
+                    </List>
+                  </>
+                )}
+              </li>
+            </ul>
+            {router.pathname === "/login" ? (
+              <Link href="/signup">
+                <button className={styles.login}>회원가입</button>
+              </Link>
+            ) : (
+              <Link href="/login">
+                <button className={styles.login}>로그인</button>
+              </Link>
+            )}
+          </header>
+          <></>
+        </>
       ) : isMobile === -1 ? (
         <header className={styles.mobile_header}>
           <AiOutlineMenu
@@ -99,7 +156,7 @@ function Header() {
           onClick={() => setIsOpenMenu(false)}
         ></div>
       )}
-    </div>
+    </>
   );
 }
 
