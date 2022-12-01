@@ -53,11 +53,11 @@ function Header() {
                 커뮤니티
                 {isOpenCommunityMenu && (
                   <>
-                    <div
-                      className={styles.triangle}
-                      onMouseOver={() => setIsOpenCommunityMenu(true)}
-                      onMouseLeave={() => setIsOpenCommunityMenu(false)}
-                    ></div>
+                      <div
+                        className={styles.triangle}
+                        onMouseOver={() => setIsOpenCommunityMenu(true)}
+                        onMouseLeave={() => setIsOpenCommunityMenu(false)}
+                      ></div>
                     <List
                       sx={{
                         width: "150px",
@@ -66,7 +66,7 @@ function Header() {
                         transform: "translate(-50%,0)",
                         top: "74.8px",
                         zIndex: "200",
-                        backgroundColor: "rgb(237,239,241)",
+                        backgroundColor: "#F6F7F8",
                         borderRadius: "10px",
                         display: "block",
                       }}
@@ -83,9 +83,11 @@ function Header() {
                         <ListItemText primary="당첨자 발표" />
                       </ListItem>
                       <Divider light />
-                      <ListItem button sx={{ textAlign: "center" }}>
-                        <ListItemText primary="강의 후기" />
-                      </ListItem>
+                      <Link href={"/review"}>
+                        <ListItem button sx={{ textAlign: "center" }}>
+                          <ListItemText primary="강의 후기" />
+                        </ListItem>
+                      </Link>
                       <Divider light />
                       <ListItem button sx={{ textAlign: "center" }}>
                         <ListItemText primary="자주 묻는 질문" />
