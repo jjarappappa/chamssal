@@ -19,13 +19,13 @@ function Info() {
         <div className={styles.title}>
           <span
             className={mode ? styles.title_selected : styles.title_unselected}
-            onClick={() => setMode((prev) => !prev)}
+            onClick={() => setMode(true)}
           >
             임신/출산
           </span>
           <span
             className={!mode ? styles.title_selected : styles.title_unselected}
-            onClick={() => setMode((prev) => !prev)}
+            onClick={() => setMode(false)}
           >
             육아
           </span>
