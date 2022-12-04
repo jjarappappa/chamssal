@@ -12,7 +12,7 @@ const Login: NextPage = () => {
   } = useForm();
 
   return (
-    <div className="background">
+    <div className={styles.background}>
       <Head>
         <title>로그인</title>
       </Head>
