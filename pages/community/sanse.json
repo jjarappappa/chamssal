@@ -1,0 +1,14 @@
+{
+    "content": "string",
+    "createdAt": "2022-12-04T13:03:11.814Z",
+    "title": "string",
+    "type": "DANGCHEOMER",
+    "user": {
+      "address": "string",
+      "birthday": "2022-12-04",
+      "email": "string",
+      "name": "string",
+      "nickname": "string",
+      "phoneNumber": "string"
+    }
+  }

@@ -3,8 +3,8 @@ import Information from "../../components/community/information";
 import ReviewData from './reviewd.json';
 import Header from "../../components/layout/header";
 import styles from '../../styles/pages/review.module.scss';
+import Link from "next/link";
 const Review: NextPage = () => {
-
     return (
         <div className={styles.reviewall}>
             <Header />
