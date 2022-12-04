@@ -22,3 +22,4 @@ const Detail: NextPage = () => {
         </div>
     )
 }
+export default Detail;
