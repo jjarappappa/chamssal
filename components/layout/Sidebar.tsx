@@ -1,6 +1,5 @@
 import Image from "next/image";
 import styles from "../../styles/components/layout/Sidebar.module.scss";
-import PersonIcon from "@mui/icons-material/Person";
 import React from "react";
 import { TriangleIcon } from "../icons/TriangleIcon";
 import { FaUser } from "react-icons/fa";

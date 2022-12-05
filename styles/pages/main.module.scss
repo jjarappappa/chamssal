@@ -1,0 +1,25 @@
+.mainbutton {
+    display: flex;
+    justify-content: center;
+}
+
+.realyoutube {
+    display: flex;
+    justify-content: center;
+    position: relative;
+    top: 50px;
+}
+
+.banners {
+    display: flex;
+    gap: 50px;
+    flex-wrap: wrap;
+    .banner {
+        background-color: white;
+        width: 502px;
+        height: 221px;
+        border-radius: 13px;
+        border: none;
+        position: relative;
+    }
+}
