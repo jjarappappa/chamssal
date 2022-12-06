@@ -82,3 +82,11 @@
         }
     }
 }
+
+.community{
+    &:hover{
+        .sub_gnb{
+            display: block;
+        }
+    }
+}
