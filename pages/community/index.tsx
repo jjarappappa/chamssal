@@ -1,5 +1,5 @@
 import { NextPage } from "next";
-import Information from "../../components/community/information";
+import Information from "../../components/community/Information";
 import ReviewData from './reviewd.json';
 import Header from "../../components/layout/header";
 import styles from '../../styles/pages/review.module.scss';

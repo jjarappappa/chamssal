@@ -14,7 +14,7 @@ function Mainbutton() {
           <span>신청하기</span>
         </button>
       </Link>
-      <Link href="/classreview">
+      <Link href="/review">
         <button className={styles.reviewbutton}>
           <div>
             <img src="/images/review.svg" />
@@ -22,7 +22,7 @@ function Mainbutton() {
           <span>후기보기</span>
         </button>
       </Link>
-      <Link href="">
+      <Link href="/info">
         <button className={styles.informationbutton}>
           <div>
             <img src="/images/information.svg" />

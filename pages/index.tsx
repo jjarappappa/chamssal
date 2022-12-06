@@ -5,21 +5,30 @@ import Mainbutton from "../components/buttons/Mainbutton";
 import Banner from "../components/banner/banner";
 import styles from "../styles/pages/index.module.scss";
 import Youtube from "../components/youtube/youtube";
+import Sidebar from "../components/layout/Sidebar";
 const Home: NextPage = () => {
   return (
-    <div className="background">
+    <>
       <Head>
         <title>아이맘 행복교실</title>
       </Head>
-      <Header />
-      <Banner />
-      <div className={styles.mainbutton}>
-        <Mainbutton />
-      </div>
-      <div className={styles.realyoutube}>
-        <Youtube />
-      </div>
-    </div>
+      {!true ? (
+        <div className="background">
+          <Header />
+          <Banner />
+          <div className={styles.mainbutton}>
+            <Mainbutton />
+          </div>
+          <div className={styles.realyoutube}>
+            <Youtube />
+          </div>
+        </div>
+      ) : (
+        <div className="background_admin">
+          <Sidebar />
+        </div>
+      )}
+    </>
   );
 };
 
