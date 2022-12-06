@@ -1,15 +1,25 @@
 import Image from "next/image";
 import styles from "../../styles/components/layout/Sidebar.module.scss";
-import PersonIcon from "@mui/icons-material/Person";
 import React from "react";
 import { TriangleIcon } from "../icons/TriangleIcon";
 import { FaUser } from "react-icons/fa";
+import Link from "next/link";
+import { useRouter } from "next/router";
 
 function Sidebar() {
+  const router = useRouter();
+  console.log(router);
   return (
     <div className={styles.sidebar}>
-      <span>
-        <Image alt="로고" width={84.34} height={53.46} src="/images/logo.png" />
+      <span className={styles.logo}>
+        <Link href="/">
+          <Image
+            alt="로고"
+            width={84.34}
+            height={53.46}
+            src="/images/logo.png"
+          />
+        </Link>
       </span>
       <span className={styles.admin}>admin</span>
       <div className={styles.nickname}>
@@ -21,10 +31,18 @@ function Sidebar() {
       <div className={styles.items}>
         <div>
           <span className={styles.item_title}>기본</span>
-          <div className={styles.item}>
-            <TriangleIcon />
-            <span className={styles.text}>메인 배너 등록</span>
-          </div>
+          <Link href="/admin/banner">
+            <div
+              className={styles.item}
+              style={{
+                backgroundColor:
+                  router.pathname === "/admin/banner" ? "#F1F1F1" : "#FFF",
+              }}
+            >
+              <TriangleIcon />
+              <span className={styles.text}>메인 배너 등록</span>
+            </div>
+          </Link>
         </div>
         <div>
           <span className={styles.item_title}>임신육아</span>
