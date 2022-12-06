@@ -9,33 +9,3 @@
     position: relative;
     top: 50px;
 }
-
-.banners {
-    display: flex;
-    gap: 50px;
-    flex-wrap: wrap;
-
-    .banner {
-        background-color: white;
-        width: 502px;
-        height: 221px;
-        border-radius: 13px;
-        border: none;
-        position: relative;
-
-        .plus {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            cursor: pointer;
-        }
-        .delete{
-            cursor: pointer;
-            position: absolute;
-            right: 10px;
-            top: 10px;
-            transform: rotate(45deg);
-        }
-    }
-}
