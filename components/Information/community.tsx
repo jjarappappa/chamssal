@@ -1,4 +1,4 @@
-import styles from "../../styles/components/community/information.module.scss";
+import styles from "../../styles/components/information/community.module.scss";
 
 
 export default function Information(props: {
@@ -7,9 +7,9 @@ export default function Information(props: {
     name: string
 }) {
     return (
-        <div className={styles.reviewtit}>
-            <div className={styles.reviewinformation}>
-                <div className={styles.reviewinfo}>
+        <div className={styles.comutit}>
+            <div className={styles.comuinformation}>
+                <div className={styles.comuinfo}>
                     <span className={styles.leftspan}>
                         <span>{props.title}</span>
                     </span>
