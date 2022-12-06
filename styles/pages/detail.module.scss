@@ -1,0 +1,47 @@
+.Detailbody {
+    .Detailtit {
+        display: flex;
+        justify-content: center;
+
+        .Detaildetail {
+            padding: 10px;
+            width: 70%;
+
+            .Detailtop {
+                text-align: center;
+
+                .Detailtitle {
+                    font-weight: 500;
+                    font-size: 30px;
+                }
+
+                .Detailright {
+                    text-align: right;
+                    font-size: 20px;
+                    color: #9B9B9B;
+
+                    .Detailname {
+                        padding-right: 10px;
+
+                    }
+
+                    .Detailbirth {}
+                }
+
+                padding-bottom: 10px;
+            }
+
+            .Detailbottom {
+                width: 100%;
+                padding: 20px;
+                background-color: #f0f0f0;
+                border-radius: 10px;
+                min-height: 50vh;
+                font-size: 25px;
+                white-space: nowrap;
+                word-break: break-all;
+                text-overflow: ellipsis;
+            }
+        }
+    }
+}

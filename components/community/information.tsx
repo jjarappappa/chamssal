@@ -15,6 +15,7 @@ export default function Information(props: {
                         <span>{props.title}</span>
                     </span>
                     <span className={styles.rightspan}>
+                        
                         <span className={styles.name}>{props.name}</span>
                         <span className={styles.day}>{props.day}</span>
                     </span>
