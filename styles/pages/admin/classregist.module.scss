@@ -1,0 +1,27 @@
+.regist_total{
+    background-color: white;
+    padding: 20px 40px;
+    border-radius: 20px;
+    .regist_title{
+        padding:  10px 10px;
+        border: none;
+        border-bottom: 3px solid #A5A5A5;
+        font-size: 30px;
+        font-weight: 700;
+        width: 100%;
+    }
+    .regist_minip{
+        padding: 3px 0px;
+        .minititle{
+            font-size: 25px;
+            font-weight: 300;
+        }
+        input{
+            border: none;
+            border-bottom: 2px solid #A5A5A5;
+        }
+        .widthmini{
+            width:90%;
+        }
+    }
+}
