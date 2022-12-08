@@ -33,12 +33,16 @@ const ClassRegist: NextPage = () => {
                     <p className={styles.regist_minip}>
                         <span className={styles.minititle}>접수기간</span>
                         <input/>
+                        <input/>
+                        <input/>
                     </p>
                     <p className={styles.regist_minip}>
                         <span className={styles.minititle}>당첨자 발표</span>
                         <input/>
+                        <input/>
+                        <input/>
                     </p>
-                    <p>
+                    <p className={styles.regist_minip}>
                         <button>+ 이미지 추가</button>
                     </p>
                 </div>

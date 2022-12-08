@@ -12,16 +12,28 @@
     }
     .regist_minip{
         padding: 3px 0px;
+        width:100%;
+        background-color: red;
         .minititle{
             font-size: 25px;
             font-weight: 300;
+            background-color: aqua; 
         }
         input{
             border: none;
             border-bottom: 2px solid #A5A5A5;
         }
         .widthmini{
-            width:90%;
+        }
+        button{
+            background-color: lightgrey;
+            padding: 10px;
+            font-size: 25px;
+            border: none;
+            border-radius: 5px;
+        }
+        span{
+            
         }
     }
 }
