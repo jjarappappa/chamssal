@@ -1,3 +1,8 @@
+.infoTitle{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
 .title{
     margin: 10px 0;
     font-family: 'Spoqa Han Sans Neo', 'sans-serif';
@@ -6,4 +11,11 @@
 }
 .hr{
     color: $mediumgray;
+}
+.icons{
+    display: flex;
+    gap: 20px;
+    .icon{
+        cursor: pointer;
+    }
 }
