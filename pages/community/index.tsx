@@ -1,10 +1,10 @@
 import { NextPage } from "next";
-import Information from "../../components/community/information";
+import Information from "../../components/Information/community";
 import ReviewData from './reviewd.json';
 import Header from "../../components/layout/header";
 import styles from '../../styles/pages/review.module.scss';
+import Link from "next/link";
 const Review: NextPage = () => {
-
     return (
         <div className={styles.reviewall}>
             <Header />
