@@ -1,39 +1,61 @@
-.regist_total{
+.regist_total {
     background-color: white;
     padding: 20px 40px;
     border-radius: 20px;
-    .regist_title{
-        padding:  10px 10px;
+
+    .regist_title {
+        padding: 10px 10px;
         border: none;
         border-bottom: 3px solid #A5A5A5;
         font-size: 30px;
         font-weight: 700;
         width: 100%;
     }
-    .regist_minip{
-        padding: 3px 0px;
-        width:100%;
-        background-color: red;
-        .minititle{
-            font-size: 25px;
-            font-weight: 300;
-            background-color: aqua; 
-        }
-        input{
-            border: none;
-            border-bottom: 2px solid #A5A5A5;
-        }
-        .widthmini{
-        }
+
+    .regist_minip {
+        padding: 3.5px 0px;
+        width: 100%;
         button{
-            background-color: lightgrey;
-            padding: 10px;
-            font-size: 25px;
+            background-color: #D9D9D9;
             border: none;
             border-radius: 5px;
+            padding: 10px;
+            font-size: 20px;
         }
+    }
+}
+
+.minititle_one{ 
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    padding:  10px 0px;
+    .minititle_name{
         span{
-            
+            font-size: 25px;
+            font-weight: 300;
         }
+    }
+    .minititle_input{
+        width: 60vw;
+        .longinput{
+            width: 100%;
+            background-color: red;
+            font-size: 25px;
+        }
+        .inputall{
+            .widthmini{
+                background-color: red;
+            }
+            .mulgyel{
+                color: #CCCCCC;
+                font-size: 25px;
+            }
+        }
+    }
+    input{
+        font-size: 23px;
+        border: none;
+        border-bottom: 1px solid #CCCCCC;
     }
 }
