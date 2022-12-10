@@ -4,10 +4,15 @@ import AdminTitle from "../../../components/layout/AdminTitle";
 import styles from "../../../styles/pages/admin/info.module.scss";
 import InfoTitle from "../../../components/info/InfoTitle";
 import InfoItem from "../../../components/info/InfoItem";
+import { HiPlus } from "react-icons/hi";
+import Head from "next/head";
 
 function Parenting() {
   return (
     <>
+      <Head>
+        <title>육아 정보</title>
+      </Head>
       <Sidebar />
       <div className="background_admin">
         <AdminTitle>육아 정보</AdminTitle>
@@ -35,6 +40,10 @@ function Parenting() {
               내용2
             </InfoItem>
           </div>
+        </div>
+        <div className={styles.add}>
+          <HiPlus color="#73726F" size={40} className={styles.add_icon} />
+          <span className={styles.add_text}>정보 추가</span>
         </div>
       </div>
     </>

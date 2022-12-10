@@ -5,10 +5,14 @@ import styles from "../../../styles/pages/admin/info.module.scss";
 import InfoTitle from "../../../components/info/InfoTitle";
 import InfoItem from "../../../components/info/InfoItem";
 import { HiPlus } from "react-icons/hi";
+import Head from "next/head";
 
 function Pragnancy() {
   return (
     <>
+      <Head>
+        <title>임신/출산 정보</title>
+      </Head>
       <Sidebar />
       <div className="background_admin">
         <AdminTitle>임신/출산 정보</AdminTitle>
