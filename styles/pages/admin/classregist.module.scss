@@ -44,7 +44,11 @@
             font-size: 25px;
         }
         .inputall{
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
             .widthmini{
+                width: 30%;
                 background-color: red;
             }
             .mulgyel{
