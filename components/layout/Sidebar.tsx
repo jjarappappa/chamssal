@@ -46,14 +46,30 @@ function Sidebar() {
         </div>
         <div>
           <span className={styles.item_title}>임신육아</span>
-          <div className={styles.item}>
-            <TriangleIcon />
-            <span className={styles.text}>임신/출산 정보</span>
-          </div>
-          <div className={styles.item}>
-            <TriangleIcon />
-            <span className={styles.text}>육아 정보</span>
-          </div>
+          <Link href="/admin/info/pregnancy">
+            <div
+              className={styles.item}
+              style={{
+                backgroundColor:
+                  router.pathname === "/admin/info/pregnancy" ? "#F1F1F1" : "#FFF",
+              }}
+            >
+              <TriangleIcon />
+              <span className={styles.text}>임신/출산 정보</span>
+            </div>
+          </Link>
+          <Link href="/admin/info/parenting">
+            <div
+              className={styles.item}
+              style={{
+                backgroundColor:
+                  router.pathname === "/admin/info/parenting" ? "#F1F1F1" : "#FFF",
+              }}
+            >
+              <TriangleIcon />
+              <span className={styles.text}>육아 정보</span>
+            </div>
+          </Link>
         </div>
         <div>
           <span className={styles.item_title}>동영상 강좌</span>

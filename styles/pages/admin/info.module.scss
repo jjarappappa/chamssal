@@ -1,0 +1,24 @@
+.period {
+    margin: 40px 0;
+
+    .item {
+        margin: 10px 0;
+    }
+}
+
+.add {
+    display: inline-flex;
+    align-items: center;
+    gap: 15px;
+    cursor: pointer;
+
+    .add_icon {
+        @include icon;
+    }
+
+    .add_text {
+        font-size: 38px;
+        font-weight: 600;
+        color: #73726F;
+    }
+}
