@@ -1,21 +1,25 @@
-.infoTitle{
+.infoTitle {
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
-.title{
+
+.title {
     margin: 10px 0;
     font-family: 'Spoqa Han Sans Neo', 'sans-serif';
     font-weight: 400;
     font-size: 30px;
 }
-.hr{
+
+.hr {
     color: $mediumgray;
 }
-.icons{
+
+.icons {
     display: flex;
     gap: 20px;
-    .icon{
-        cursor: pointer;
+
+    .icon {
+        @include icon;
     }
 }

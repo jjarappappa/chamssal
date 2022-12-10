@@ -9,11 +9,11 @@
 @mixin yellowBtn() {
     background-color: $yellow;
     border: none;
-    color: white;    
+    color: white;
     font-family: 'Spoqa Han Sans Neo', 'sans-serif';
 }
 
-@mixin input($width: 320px, $align: left, $left: 20px){
+@mixin input($width: 320px, $align: left, $left: 20px) {
     width: $width;
     height: 78px;
     background-color: $lightgray !important;
@@ -22,4 +22,13 @@
     border-radius: 30px;
     padding-left: $left;
     font-size: 24px;
+}
+
+@mixin icon($trans: scale(1)) {
+    cursor: pointer;
+    transition: all 0.3s;
+
+    &:hover {
+        transform: scale(1.1) $trans !important;
+    }
 }

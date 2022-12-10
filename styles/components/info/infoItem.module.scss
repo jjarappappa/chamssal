@@ -1,16 +1,21 @@
-.icon{
+.icon {
     position: absolute;
     right: 16px;
 }
 
-.icon_reverse{
+.icon_reverse {
     position: absolute;
     right: 16px;
     transform: rotate(-180deg);
 }
 
-.infoItem{
+.infoItem {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    width: 100%;
+}
+
+.trash {
+    @include icon;
 }

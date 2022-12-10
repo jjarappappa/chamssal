@@ -20,7 +20,7 @@ function InfoItem({
         onClick={() => setIsOpen((prev) => !prev)}
         style={{ borderRadius: "10px" }}
         sx={{
-          margin: "10px 0",
+          margin: "5px 0",
           "&:before": {
             display: "none",
           },
@@ -36,7 +36,9 @@ function InfoItem({
         </AccordionSummary>
         <AccordionDetails>{children}</AccordionDetails>
       </Accordion>
-      {isAdmin && <BsTrashFill size={30} color="#73726F" />}
+      {isAdmin && (
+        <BsTrashFill size={30} color="#73726F" className={styles.trash} />
+      )}
     </div>
   );
 }
