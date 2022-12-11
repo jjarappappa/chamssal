@@ -2,7 +2,20 @@ import { NextPage } from "next";
 import Sidebar from "../../../components/layout/Sidebar";
 import AdminTitle from "../../../components/layout/AdminTitle";
 import styles from '../../../styles/pages/admin/classregist.module.scss';
+import React, { useState } from 'react';
+import { MdDelete } from "react-icons/md";
 const ClassRegist: NextPage = () => {
+
+    const [fileImage, setFileImage] = useState("");
+    const saveFileImage = (event: React.ChangeEvent<HTMLInputElement>) => {
+        // @ts-ignore
+        setFileImage(URL.createObjectURL(event.target.files[0]));
+    };
+    const deleteFileImage = () => {
+        URL.revokeObjectURL(fileImage);
+        setFileImage("");
+    };
+
     return (
         <>
             <Sidebar />
@@ -30,7 +43,7 @@ const ClassRegist: NextPage = () => {
                                 <span>장소</span>
                             </div>
                             <div className={styles.minititle_input}>
-                                <input className={styles.longinput}/>
+                                <input className={styles.longinput} />
                             </div>
                         </div>
                         <div className={styles.minititle_one}>
@@ -38,7 +51,7 @@ const ClassRegist: NextPage = () => {
                                 <span>대상</span>
                             </div>
                             <div className={styles.minititle_input}>
-                                <input  className={styles.longinput}/>
+                                <input className={styles.longinput} />
                             </div>
                         </div>
                         <div className={styles.minititle_one}>
@@ -46,7 +59,7 @@ const ClassRegist: NextPage = () => {
                                 <span>강사</span>
                             </div>
                             <div className={styles.minititle_input}>
-                                <input  className={styles.longinput}/>
+                                <input className={styles.longinput} />
                             </div>
                         </div>
                         <div className={styles.minititle_one}>
@@ -75,7 +88,21 @@ const ClassRegist: NextPage = () => {
                         </div>
                     </div>
                     <div className={styles.regist_minip}>
-                        <button>+ 이미지 추가</button>
+                        <input
+                            className={styles.regist_mini_input}
+                            name="imggeUpload"
+                            type="file"
+                            accept="image/*"
+                            onChange={saveFileImage}
+                        />
+                        <div>
+                            {fileImage && (<img alt="sample" src={fileImage}
+                                style={{ margin: "auto" }} />)}
+                        </div>
+
+                        <div className={styles.minidelete}>
+                            <button onClick={() => deleteFileImage()} className={styles.deletebutton_mini}> <MdDelete/> </button>
+                        </div>
                     </div>
                 </div>
             </div>
