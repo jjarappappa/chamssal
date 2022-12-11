@@ -16,15 +16,15 @@
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
-            cursor: pointer;
+            @include icon(translate(-50%, -50%));
         }
 
         .delete {
-            cursor: pointer;
             position: absolute;
             right: 10px;
             top: 10px;
             transform: rotate(45deg);
+            @include icon(rotate(45deg));
         }
     }
 }
