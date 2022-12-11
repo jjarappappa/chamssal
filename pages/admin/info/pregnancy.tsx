@@ -7,7 +7,7 @@ import InfoItem from "../../../components/info/InfoItem";
 import { HiPlus } from "react-icons/hi";
 import Head from "next/head";
 
-function Pragnancy() {
+function Pregnancy() {
   return (
     <>
       <Head>
@@ -50,4 +50,4 @@ function Pragnancy() {
   );
 }
 
-export default Pragnancy;
+export default Pregnancy;
