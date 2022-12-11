@@ -84,10 +84,17 @@ function Sidebar() {
         </div>
         <div>
           <span className={styles.item_title}>강의</span>
-          <div className={styles.item}>
-            <TriangleIcon />
-            <span className={styles.text}>등록</span>
-          </div>
+          <Link href = "/admin/classregist">
+            <div className={styles.item}
+              style={{
+                backgroundColor:
+                  router.pathname === "/admin/classregist" ? "#F1F1F1" : "#FFF",
+              }}
+            >
+              <TriangleIcon />
+              <span className={styles.text}>등록</span>
+            </div>
+          </Link>
           <div className={styles.item}>
             <TriangleIcon />
             <span className={styles.text}>신청자 정보</span>
