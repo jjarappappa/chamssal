@@ -10,6 +10,7 @@ import { HiOutlineChevronDown } from "react-icons/hi";
 import SignupName from "../../components/signup/SignupName";
 import { useForm } from "react-hook-form";
 import { snackBarState } from "../../store/alert/snackBarAtom";
+import { ListItem, List, Divider, ListItemText } from "@mui/material";
 
 function SignUp() {
   const [signUpInput, setSignUpInput] = useRecoilState(signUpInputState);
@@ -98,42 +99,96 @@ function SignUp() {
                 // value={signUpInput.email}
                 // onChange={(e) => changeSignUp(e)}
               />
-              <span>@</span>
-              <div className={styles.select}>
-                <input
-                  className={styles.input_middle}
-                  placeholder="직접 입력"
-                  {...register("domain")}
-                  value={domain}
-                  onChange={(e) => setDomain(e.target.value)}
-                  onFocus={() => setIsOpenSelect(false)}
-                />
-                <span
-                  className={
-                    !isOpenSelect ? styles.arrow_down : styles.arrow_up
-                  }
-                  onClick={(e) => {
-                    setIsOpenSelect((prev) => !prev);
-                    e.stopPropagation();
-                  }}
-                >
-                  <HiOutlineChevronDown width={44} height={44} />
-                </span>
+              <span className={styles.special}>@</span>
+              <div>
+                <div className={styles.select}>
+                  <input
+                    className={styles.input_middle}
+                    placeholder="직접 입력"
+                    {...register("domain")}
+                    value={domain}
+                    onChange={(e) => setDomain(e.target.value)}
+                    onFocus={() => setIsOpenSelect(false)}
+                  />
+                  <span
+                    className={
+                      !isOpenSelect ? styles.arrow_down : styles.arrow_up
+                    }
+                    onClick={(e) => {
+                      setIsOpenSelect((prev) => !prev);
+                      e.stopPropagation();
+                    }}
+                  >
+                    <HiOutlineChevronDown className={styles.special} />
+                  </span>
+                </div>
+                {isOpenSelect && (
+                  <List
+                    sx={{
+                      width: "314px",
+                      position: "absolute",
+                      zIndex: "199",
+                      backgroundColor: "#FAFAFA",
+                      borderRadius: "10px",
+                      display: "block",
+                      fontSize: "16px",
+                    }}
+                    component="nav"
+                    aria-label="mailbox folders"
+                  >
+                    <ListItem button sx={{ backgroundColor: "#FAFAFA" }}>
+                      <ListItemText
+                        primary="naver.com"
+                        onClick={() => changeDomain("naver.com")}
+                      />
+                    </ListItem>
+                    <Divider light />
+                    <ListItem button sx={{ backgroundColor: "#FAFAFA" }}>
+                      <ListItemText
+                        primary="hanmail.net"
+                        onClick={() => changeDomain("hanmail.net")}
+                      />
+                    </ListItem>
+                    <Divider light />
+                    <ListItem button sx={{ backgroundColor: "#FAFAFA" }}>
+                      <ListItemText
+                        primary="gmail.com"
+                        onClick={() => changeDomain("gmail.com")}
+                      />
+                    </ListItem>
+                    <Divider light />
+                    <ListItem button sx={{ backgroundColor: "#FAFAFA" }}>
+                      <ListItemText
+                        primary="yahoo.com"
+                        onClick={() => changeDomain("yahoo.com")}
+                      />
+                    </ListItem>
+                    <Divider light />
+                    <ListItem button sx={{ backgroundColor: "#FAFAFA" }}>
+                      <ListItemText
+                        primary="hotmail.com"
+                        onClick={() => changeDomain("hotmail.com")}
+                      />
+                    </ListItem>
+                    <Divider light />
+                    <ListItem button>
+                      <ListItemText
+                        primary="daum.net"
+                        onClick={() => changeDomain("daum.net")}
+                      />
+                    </ListItem>
+                    <Divider light />
+                    <ListItem button sx={{ backgroundColor: "#FAFAFA" }}>
+                      <ListItemText
+                        primary="nate.com"
+                        onClick={() => changeDomain("nate.com")}
+                      />
+                    </ListItem>
+                  </List>
+                )}
               </div>
             </div>
           </div>
-
-          {isOpenSelect && (
-            <ul>
-              <li onClick={() => changeDomain("naver.com")}>naver.com</li>
-              <li onClick={() => changeDomain("hanmail.net")}>hanmail.net</li>
-              <li onClick={() => changeDomain("gmail.com")}>gmail.com</li>
-              <li onClick={() => changeDomain("yahoo.com")}>yahoo.com</li>
-              <li onClick={() => changeDomain("hotmail.com")}>hotmail.com</li>
-              <li onClick={() => changeDomain("daum.net")}>daum.net</li>
-              <li onClick={() => changeDomain("nate.com")}>nate.com</li>
-            </ul>
-          )}
 
           <div className={styles.item}>
             <SignupName>비밀번호</SignupName>
@@ -167,7 +222,7 @@ function SignUp() {
                 name="phone"
                 // onChange={(e) => changePhone(0, e, 3)}
               />
-              <span>-</span>
+              <span className={styles.special}>-</span>
               <input
                 type="number"
                 className={styles.input_short}
@@ -175,7 +230,7 @@ function SignUp() {
                 name="phone"
                 // onChange={(e) => changePhone(1, e, 4)}
               />
-              <span>-</span>
+              <span className={styles.special}>-</span>
               <input
                 type="number"
                 className={styles.input_short}
@@ -196,7 +251,7 @@ function SignUp() {
                 // onChange={(e) => changeBirth(0, e, 4)}
                 placeholder="yyyy"
               />
-              <span>-</span>
+              <span className={styles.special}>-</span>
               <input
                 type="number"
                 className={styles.input_short}
@@ -205,7 +260,7 @@ function SignUp() {
                 // onChange={(e) => changeBirth(1, e, 2)}
                 placeholder="mm"
               />
-              <span>-</span>
+              <span className={styles.special}>-</span>
               <input
                 type="number"
                 className={styles.input_short}

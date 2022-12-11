@@ -1,31 +1,43 @@
-.signup{
+.signup {
     width: 100%;
     padding: 0 20%;
     position: relative;
-    ul{
+
+    ul {
         position: absolute;
         display: flex;
         flex-direction: column;
         align-items: flex-end;
-        justify-content: right;
-        // right: 60px;
-        right: calc(8px + 20%);
-        // right: 0;
-        li{
-            &:first-child{
-                margin-top: -40px;
-            }
-            width: 300px;
+        padding: 0;
+        margin: 0;
+
+        // justify-content: right;
+        li {
+            // &:first-child {
+            //     margin-top: -40px;
+            // }
+
+            width: 314px;
             line-height: 48px;
-            // border: 1px solid black;
+            border-left: 1px solid black;
+            border-right: 1px solid black;
             height: 48px;
             background-color: $lightgray;
             padding-left: 20px;
             cursor: pointer;
+
+            &:first-child {
+                border-top: 1px solid black;
+            }
+
+            &:last-child {
+                border-bottom: 1px solid black;
+                border-radius: 0 0 20px 20px;
+            }
         }
     }
-    
-    .button{
+
+    .button {
         @include yellowBtn();
         // margin-top: 56px;
         width: 100%;
@@ -36,51 +48,64 @@
     }
 
 
-    .item{
+    .item {
         display: flex;
         width: 100%;
         align-items: center;
         margin: 20px 0;
-        &:first-child{
+
+        &:first-child {
             margin-top: 60px;
         }
-        .inputs{
+
+        .inputs {
             flex: 3 1 0;
             display: inline-flex;
             align-items: center;
             justify-content: space-between;
+
             // gap: 20px;
-            .select{
+            .select {
                 display: flex;
                 align-items: center;
                 width: 320px;
             }
-            .arrow_down{
+
+            .arrow_down {
                 position: relative;
                 right: 60px;
+                transition: .3s;
                 cursor: pointer;
             }
-            .arrow_up{
+
+            .arrow_up {
                 position: relative;
                 right: 60px;
                 cursor: pointer;
+                transition: .3s;
                 transform: rotate(180deg);
             }
-            span{
+
+            .special {
                 font-size: 36px;
             }
-            .input_short{
+
+            .input_short {
                 @include input(200px, center, 0);
             }
-            .input_middle{
+
+            .input_middle {
                 @include input(320px, left, 20px);
             }
-            .input_long{
+
+            .input_long {
                 @include input(380px, left, 20px);
             }
-            .input_full{
+
+            .input_full {
                 @include input(100%, left, 20px);
             }
+
             input[type="number"]::-webkit-outer-spin-button,
             input[type="number"]::-webkit-inner-spin-button {
                 -webkit-appearance: none;
