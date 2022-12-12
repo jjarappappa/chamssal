@@ -14,7 +14,7 @@ function Mainbutton() {
           <span>신청하기</span>
         </button>
       </Link>
-      <Link href="/review">
+      <Link href="/community/review">
         <button className={styles.reviewbutton}>
           <div>
             <img src="/images/review.svg" />
