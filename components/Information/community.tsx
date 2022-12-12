@@ -15,7 +15,7 @@ export default function Information(props: {
                     </span>
                     <span className={styles.rightspan}>
                         <span className={styles.name}>{props.name}</span>
-                        <span className={styles.day}>{props.day}</span>
+                        <span className={styles.day}>{props.day.substring(0,10)}</span>
                     </span>
                 </div>
             </div>
