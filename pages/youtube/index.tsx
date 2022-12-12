@@ -1,11 +1,26 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Head from "next/head";
 import Header from "../../components/layout/header";
 import Youtubemap from "../../components/youtube/youtubemap";
 import YoutubeData from "../../components/youtube/youtube.json";
 import styles from "../../styles/pages/youtube.module.scss";
+import { useQuery, useQueryClient } from "react-query";
+import { instance } from "../../instance/instance";
+import { youtubeType } from "../../types/youtube/youtubeType";
 
 function YoutubePage() {
+  const queryClient = useQueryClient();
+
+  const getYoutube = async (): Promise<youtubeType> => {
+    const response = await instance.get<youtubeType>("/youtube");
+    console.log(response);
+    return response.data;
+  };
+
+  const youtubeQuery = useQuery("youtubeData", getYoutube);
+  useEffect(() => {
+    console.log(youtubeQuery);
+  }, []);
   return (
     <div className="background">
       <Head>
