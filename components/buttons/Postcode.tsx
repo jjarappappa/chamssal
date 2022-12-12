@@ -3,12 +3,17 @@ import { useDaumPostcodePopup } from "react-daum-postcode";
 import { useRecoilState } from "recoil";
 import { signUpInputState } from "../../store/auth/signUpInputAtom";
 signUpInputState;
-export const Postcode = ({ className }: { className: string }) => {
+export const Postcode = ({
+  className,
+  setValue,
+}: {
+  className: string;
+  setValue: any;
+}) => {
   const [signUpInput, setSignUpInput] = useRecoilState(signUpInputState);
   const open = useDaumPostcodePopup(
     "https://t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"
   );
-
   const handleComplete = (data: {
     address: any;
     addressType: string;
@@ -34,6 +39,8 @@ export const Postcode = ({ className }: { className: string }) => {
       postcode: data.zonecode,
       address: fullAddress,
     });
+    setValue("postcode", data.zonecode);
+    setValue("address", fullAddress);
   };
 
   const handleClick = () => {

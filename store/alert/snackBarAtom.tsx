@@ -1,9 +1,10 @@
 import { AlertColor } from "@mui/material";
+import { FieldError, FieldErrorsImpl, Merge } from "react-hook-form";
 import { atom } from "recoil";
 
 interface SnackBar {
   isOpen: boolean;
-  message: string;
+  message: string | FieldError | Merge<FieldError, FieldErrorsImpl<any>> | undefined;
   severity: AlertColor | undefined;
 }
 
