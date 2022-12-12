@@ -10,7 +10,12 @@
     background-color: $yellow;
     border: none;
     color: white;
-    font-family: 'Spoqa Han Sans Neo', 'sans-serif';
+    cursor: pointer;
+    transition: .3s;
+
+    &:hover {
+        background-color: gold;
+    }
 }
 
 @mixin input($width: 320px, $align: left, $left: 20px) {

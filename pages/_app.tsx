@@ -6,9 +6,11 @@ import SnackBar from "../components/alert/SnackBar";
 import { useEffect } from "react";
 import Router from "next/router";
 import NProgress from "nprogress";
+import { QueryClient, QueryClientProvider } from "react-query";
 import "nprogress/nprogress.css";
 
 function MyApp({ Component, pageProps }: AppProps) {
+  const queryClient = new QueryClient();
   useEffect(() => {
     const start = () => {
       NProgress.start();
@@ -30,8 +32,10 @@ function MyApp({ Component, pageProps }: AppProps) {
   return (
     <>
       <RecoilRoot>
-        <Component {...pageProps} />
-        <SnackBar />
+        <QueryClientProvider client={queryClient}>
+          <Component {...pageProps} />
+          <SnackBar />
+        </QueryClientProvider>
       </RecoilRoot>
     </>
   );
