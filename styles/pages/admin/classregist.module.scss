@@ -1,0 +1,73 @@
+.regist_total {
+    background-color: white;
+    padding: 20px 40px;
+    border-radius: 20px;
+    margin: 0 auto;
+    .regist_title {
+        padding: 10px 10px;
+        border: none;
+        border-bottom: 3px solid #A5A5A5;
+        font-size: 28px;
+        font-weight: 700;
+        width: 100%;
+    }
+    .regist_minip {
+        margin: 0 auto;
+        padding: 3.5px 0px;
+        width: 100%;
+        .regist_mini_input{ 
+        }
+    }
+}
+
+.minititle_one{ 
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    padding:  12px 0px;
+    .minititle_name{
+        span{
+            font-size: 25px;
+            font-weight: 300;
+        }
+    }
+    .minititle_input{
+        width: 60vw;
+        .longinput{
+            width: 100%;
+            font-size: 25px;
+        }
+        .inputall{
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            .widthmini{
+                width: 30%;
+            }
+            .mulgyel{
+                color: #CCCCCC;
+                font-size: 25px;
+            }
+        }
+    }
+    input{
+        font-size: 23px;
+        border: none;
+        border-bottom: 1px solid #CCCCCC;
+    }
+}
+
+.minidelete{
+    padding-top: 10px;
+}
+.deletebutton_mini{
+    background-color: transparent;
+    border: none;
+    font-size: 30px;
+    color: #CCCCCC;
+    &:hover{
+        background-color: #CCCCCC;
+        color: white;
+        border-radius: 5px;
+    }
+}
