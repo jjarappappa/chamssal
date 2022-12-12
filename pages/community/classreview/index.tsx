@@ -7,10 +7,10 @@ import {useEffect, useState} from "react";
 import { getCommunity } from "../../../util/api/community";
 import { useQuery, useQueryClient } from "react-query";
 const Review:NextPage = () => {
-  const {communityQuery} = useQuery('getCommunity', getCommunity);
-  
+  const {data} = useQuery('getCommunity', () => getCommunity("HUGIER"));
+
   useEffect(() => {
-    console.log(communityQuery);
+    //console.log(communityQuery);
   }, []);
   
   return (
@@ -20,11 +20,11 @@ const Review:NextPage = () => {
         <div>
           <Title>강의 후기</Title>
           <div className={styles.reviewItem}>
-            {communityQuery.feedList.map((d) => (
+            {data?.feedList?.map((f) => (
               <Information
-                title={d.title}
-                name={d.username}
-                day={d.createdAt}
+                title={f.title}
+                name={f.username}
+                day={f.createdAt}
               />
             ))}
           </div>

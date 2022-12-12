@@ -1,6 +1,7 @@
 export interface communityType {
     title: string;
-    name: string;
-    createAt: string;
+    username: string;
+    createdAt: string;
     id: number;
 }
+

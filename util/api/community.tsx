@@ -1,8 +1,7 @@
 import { instance } from "../../instance/instance";
 import { communityType } from "../../types/community/communityType";
+import { feedType } from "../../types/community/type";
 
-export const getCommunity = async (): Promise<communityType> => {
-    const response = await instance.get<communityType>("/youtube");
-    console.log(response);
-    return response.data;
+export const getCommunity = async (type: feedType): Promise<{feedList: communityType[]}> => {
+    return (await instance.get<{feedList: communityType[]}>(`/feed?type=${type}`)).data;
 }
