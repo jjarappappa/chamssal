@@ -1,0 +1,1 @@
+export type feedType = "DANGCHEOMER" | "EVENT" | "HUGIER" | "QUESTION";

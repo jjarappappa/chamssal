@@ -1,6 +1,5 @@
 .youtubeall{
-    width: 65vw;
-    padding-bottom: 60px;
+    width: 100%;
 }
 .youtubement{
     font-size: 20px;
@@ -8,7 +7,8 @@
 }
 .youtubetit{
     position: relative;
-    top: 20px;
+    padding-top: 20px;
     display: flex;
     justify-content: space-between;
+    flex-wrap: wrap;
 }

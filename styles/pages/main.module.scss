@@ -6,6 +6,12 @@
 .realyoutube {
     display: flex;
     justify-content: center;
-    position: relative;
-    top: 50px;
+    padding-top: 50px;
+}
+
+.mainsection{
+    width: 70vw;
+    margin: 0 auto;
+    padding: 0px 0px;
+    max-width: 1050px;
 }

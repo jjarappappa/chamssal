@@ -19,6 +19,9 @@ function Header() {
     setIsOpenCommunityMenu(false);
     document.body.style.overflow = "unset";
   }, [isMobile, setIsOpenMenu]);
+
+
+
   return (
     <>
       {isMobile === 1 ? (
@@ -75,27 +78,34 @@ function Header() {
                       component="nav"
                       aria-label="mailbox folders"
                     >
-                      <ListItem button sx={{ textAlign: "center" }}>
-                        <ListItemText primary="이벤트" />
-                      </ListItem>
+                      <Link href='/community/eventtime'>
+                        <ListItem button sx={{ textAlign: "center" }}>
+                          <ListItemText primary="이벤트" />
+                        </ListItem>
+                      </Link>
                       <Divider light />
-                      <ListItem button sx={{ textAlign: "center" }}>
-                        <ListItemText primary="당첨자 발표" />
-                      </ListItem>
+
+                      <Link href='/community/winner'>
+                        <ListItem button sx={{ textAlign: "center" }}>
+                          <ListItemText primary="당첨자 발표" />
+                        </ListItem>
+                      </Link>
                       <Divider light />
-                      <Link href={"/review"}>
+                      <Link href='/community/classreview'>
                         <ListItem button sx={{ textAlign: "center" }}>
                           <ListItemText primary="강의 후기" />
                         </ListItem>
                       </Link>
                       <Divider light />
-                      <ListItem button sx={{ textAlign: "center" }}>
-                        <ListItemText primary="자주 묻는 질문" />
-                      </ListItem>
+                      <Link href='/community/question'>
+                        <ListItem button sx={{ textAlign: "center" }}>
+                          <ListItemText primary="자주 묻는 질문" />
+                        </ListItem>
+                      </Link>
                       <Divider light />
-                      <ListItem button sx={{ textAlign: "center" }}>
-                        <ListItemText primary="제휴 문의" />
-                      </ListItem>
+                        <ListItem button sx={{ textAlign: "center" }}>
+                          <ListItemText primary="제휴 문의" />
+                        </ListItem>
                     </List>
                   </>
                 )}
