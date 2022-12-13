@@ -5,6 +5,7 @@ import Mainbutton from "../components/buttons/Mainbutton";
 import Banner from "../components/banner/banner";
 import styles from "../styles/pages/main.module.scss";
 import Youtube from "../components/youtube/youtube";
+import Footer from "../components/layout/footer";
 const Home: NextPage = () => {
   return (
     <div className={styles.total}>
@@ -22,6 +23,7 @@ const Home: NextPage = () => {
             <Youtube />
           </div>
         </section>
+        <Footer/>
       </div>
     </div>
   );
