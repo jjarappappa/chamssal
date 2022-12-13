@@ -7,21 +7,23 @@ import styles from "../styles/pages/main.module.scss";
 import Youtube from "../components/youtube/youtube";
 const Home: NextPage = () => {
   return (
-    <>
+    <div className={styles.total}>
       <Head>
         <title>아이맘 행복교실</title>
       </Head>
-      <div className="background">
+      <div className={styles.background}>
         <Header />
-        <Banner />
-        <div className={styles.mainbutton}>
-          <Mainbutton />
-        </div>
-        <div className={styles.realyoutube}>
-          <Youtube />
-        </div>
+        <section className={styles.mainsection}>
+          <Banner />
+          <div className={styles.mainbutton}>
+            <Mainbutton />
+          </div>
+          <div className={styles.realyoutube}>
+            <Youtube />
+          </div>
+        </section>
       </div>
-    </>
+    </div>
   );
 };
 

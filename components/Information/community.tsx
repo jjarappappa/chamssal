@@ -1,5 +1,5 @@
 import styles from "../../styles/components/information/community.module.scss";
-
+import Link from "next/link";
 
 export default function Information(props: {
     day: string,
@@ -7,6 +7,7 @@ export default function Information(props: {
     name: string
 }) {
     return (
+        <Link href={{pathname: `/community/[id]`}}>
         <div className={styles.comutit}>
             <div className={styles.comuinformation}>
                 <div className={styles.comuinfo}>
@@ -20,5 +21,6 @@ export default function Information(props: {
                 </div>
             </div>
         </div>
+        </Link>
     )
 }

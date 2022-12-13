@@ -2,11 +2,12 @@
 @import '../../variables';
 
 .Mainbuttonmain {
-    width: 50vw;
+    width: 100%;
     position: relative;
     top: 10px;
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
+    flex-wrap: wrap;
     .joinbutton {
         background-color: #F3B376;
         &:hover{
@@ -35,10 +36,9 @@
         padding: 10px;
         border: none;
         border-radius: 15px;
-        width: 120px;
         div{
             img{
-                width: 60px;
+                width: 55%;
             
             }
             padding-bottom: 5px;
@@ -51,13 +51,3 @@
         }
     }
 }
-
-
-@media screen and (max-width: 600px) {
-    #button{
-        span{
-            display: none;
-        }
-    }    
-}
-  
