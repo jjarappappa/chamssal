@@ -12,7 +12,7 @@ const Detail: NextPage = () => {
   return (
     <>
       <Header />
-      <div className="background">
+      <div>
         <div className={styles.Detailbody}>
           <div className={styles.Detailtit}>
             <div className={styles.Detaildetail}>

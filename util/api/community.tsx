@@ -8,5 +8,5 @@ export const getCommunity = async (type: feedType): Promise<{feedList: community
 }
 
 export const getFeed = async (): Promise<communityFeedType> => {
-    return(await instance.get(`/feed/2`)).data;
+    return(await instance.get(`/feed/${getCommunity.feedList.}`)).data;
 }
