@@ -16,13 +16,10 @@ const Detail: NextPage = () => {
   const router = useRouter();
   const { id } = router.query;
 
+
+
   const queryClient = useQueryClient();
-  ` `
-  const {mutate} = useMutation(createComments, {
-    onSuccess: () => {
-      queryClient.invalidateQueries("comments");
-    },
-})
+
 
   return (
     <>
