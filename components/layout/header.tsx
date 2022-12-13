@@ -53,11 +53,11 @@ function Header() {
                 커뮤니티
                 {isOpenCommunityMenu && (
                   <>
-                      <div
-                        className={styles.triangle}
-                        onMouseOver={() => setIsOpenCommunityMenu(true)}
-                        onMouseLeave={() => setIsOpenCommunityMenu(false)}
-                      ></div>
+                    <div
+                      className={styles.triangle}
+                      onMouseOver={() => setIsOpenCommunityMenu(true)}
+                      onMouseLeave={() => setIsOpenCommunityMenu(false)}
+                    ></div>
                     <List
                       sx={{
                         width: "150px",
@@ -105,6 +105,16 @@ function Header() {
               <Link href="/signup">
                 <button className={styles.login}>회원가입</button>
               </Link>
+            ) : localStorage.getItem("accessToken") ? (
+              <button
+                className={styles.login}
+                onClick={() => {
+                  localStorage.removeItem("accessToken");
+                  location.reload();
+                }}
+              >
+                로그아웃
+              </button>
             ) : (
               <Link href="/login">
                 <button className={styles.login}>로그인</button>
