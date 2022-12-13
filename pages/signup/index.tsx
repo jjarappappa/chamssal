@@ -79,7 +79,7 @@ function SignUp() {
         <form
           onSubmit={handleSubmit((data) => {
             const signupData = {
-              address: signUpInput.address,
+              address: data.address,
               birthday: data.birth1 + "-" + data.birth2 + "-" + data.birth3,
               email: data.email + "@" + data.domain,
               name: data.name,

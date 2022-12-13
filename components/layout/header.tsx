@@ -115,6 +115,16 @@ function Header() {
               <Link href="/signup">
                 <button className={styles.login}>회원가입</button>
               </Link>
+            ) : localStorage.getItem("accessToken") ? (
+              <button
+                className={styles.login}
+                onClick={() => {
+                  localStorage.removeItem("accessToken");
+                  location.reload();
+                }}
+              >
+                로그아웃
+              </button>
             ) : (
               <Link href="/login">
                 <button className={styles.login}>로그인</button>
