@@ -6,6 +6,7 @@ import Title from "../../../components/layout/title";
 import {useEffect, useState} from "react";
 import { getCommunity } from "../../../util/api/community";
 import { useQuery, useQueryClient } from "react-query";
+import { ImPencil } from "react-icons/im";
 const Review:NextPage = () => {
   const {data} = useQuery('getCommunity', () => getCommunity("HUGIER"));
 
@@ -20,6 +21,12 @@ const Review:NextPage = () => {
       <div className={styles.reviewgang}>
         <div>
           <Title>강의 후기</Title>
+          <div className={styles.write}>
+            <span className={styles.write_span}>
+              <span className={styles.write_span_span}>글쓰기</span>
+              <span className={styles.write_span_pencil}><ImPencil/></span>
+            </span>
+          </div>
           <div className={styles.reviewItem}>
             {data?.feedList?.map((f) => (
               <Information

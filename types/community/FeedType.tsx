@@ -4,7 +4,7 @@ export interface communityFeedType{
     commentList: [
       {
         comment: string,
-        id: 0,
+        id: number,
         user: {
           address: string,
           birthday: string,

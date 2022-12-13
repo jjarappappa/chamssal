@@ -6,12 +6,23 @@ import {useEffect, useState} from "react";
 import { getFeed } from "../../../util/api/community";
 import { useQuery, useQueryClient } from "react-query";
 import { useRouter } from "next/router";
-
+import { IoMdSend } from "react-icons/io";
+import Comment from "../../../components/comment";
+import {useMutation} from "react-query";
+import {createComments} from "../../../util/api/community";
 const Detail: NextPage = () => {
 
   const {data} = useQuery('getFeed', () => getFeed(id));
   const router = useRouter();
   const { id } = router.query;
+
+  const queryClient = useQueryClient();
+  ` `
+  const {mutate} = useMutation(createComments, {
+    onSuccess: () => {
+      queryClient.invalidateQueries("comments");
+    },
+})
 
   return (
     <>
@@ -30,7 +41,24 @@ const Detail: NextPage = () => {
                   </span>
                 </div>
               </div>
-              <p className={styles.Detailbottom}>{data?.content}</p>
+              <p className={styles.Detailbottom}>
+                {data?.content}
+              </p>
+              <div className={styles.commentswrite}>
+                <input placeholder="댓글 작성"/> 
+                <button><span><IoMdSend/></span></button>
+              </div>
+              <div className={styles.comments}>
+                {  
+                  data?.commentList?.commentList?.map((c) =>(
+                    <Comment
+                      comment = {c.comment}
+                      id = {c.id}
+                      nickname = {c.user.nickname}
+                    />
+                  ))
+                }
+              </div>
             </div>
           </div>
         </div>
