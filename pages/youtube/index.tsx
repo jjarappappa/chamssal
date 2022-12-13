@@ -11,16 +11,21 @@ import { youtubeType } from "../../types/youtube/youtubeType";
 function YoutubePage() {
   const queryClient = useQueryClient();
 
-  const getYoutube = async (): Promise<youtubeType> => {
-    const response = await instance.get<youtubeType>("/youtube");
-    console.log(response);
-    return response.data;
+  // const getYoutube = async (): Promise<youtubeType> => {
+  //   const response = await instance.get<youtubeType>("/youtube");
+  //   console.log(response);
+  //   return response;
+  // };
+
+  const getYoutube = () => {
+    return instance.get("/youtube");
   };
 
   const youtubeQuery = useQuery("youtubeData", getYoutube);
-  useEffect(() => {
-    console.log(youtubeQuery);
-  }, []);
+  console.log(youtubeQuery);
+  // useEffect(() => {
+  //   console.log(youtubeQuery);
+  // }, []);
   return (
     <div className="background">
       <Head>
