@@ -4,19 +4,30 @@ import Header from "../../components/layout/header";
 import Title from "../../components/layout/title";
 import LectureItem from "../../components/lecture/LectureItem";
 import styles from "../../styles/pages/lecture.module.scss";
+import { useQuery, useQueryClient } from "react-query";
+import { instance } from "../../instance/instance";
+import { lectureType } from "../../types/lecture/lectureType";
+import Link from "next/link";
+import { getLectureList } from "../../util/api/lecture";
 
 function Lecture() {
+  const { status, data, error } = useQuery("lecture", () => getLectureList());
+  const queryClient = useQueryClient();
+
+  console.log(queryClient.getQueriesData("youtube"));
+
   return (
-    <div className="background">
+    <div className={styles.background}>
       <Head>
         <title>강의 신청</title>
       </Head>
       <Header />
-      {/* <Title>강의 신청</Title> */}
+      <Title>강의 신청</Title>
       <div className={styles.lecture}>
-        {[...Array(9)].map((item, index) => {
-          return <LectureItem key={index} data={item} />;
-        })}
+        {status === "success" &&
+          data?.data.lectureList?.map((item: lectureType) => {
+            return <LectureItem data={item} key={item.id} />;
+          })}
       </div>
     </div>
   );

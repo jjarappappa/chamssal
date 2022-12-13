@@ -1,10 +1,18 @@
+.background{
+    background-color: #F0F0F0;
+    max-height: 100vh;
+    height: 100%;
+    position: absolute;
+    width: 100%;
+}
+
 .lecture{
     display: grid;
     // display: flex;
     gap: 24px;
     // flex-flow: row wrap;
     grid-template-columns: repeat(4, 1fr);
-    background-color: #FAFAFA;
+    background-color: #F0F0F0;
     // justify-content: flex-start;
     margin: 36px auto;
     // margin: 36px 150px;

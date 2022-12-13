@@ -7,12 +7,17 @@
     border-radius: 20px;
     flex: 240px 1 0%;
     background-color: white;
+    transition: .3s;
+    &:hover{
+        background-color: #F6F6F6;
+    }
     cursor: pointer;
     .img{
         width: 100%;
         // height: ;
         position: relative;
         border-radius: 20px 20px 0 0;
+        margin-bottom: 20px;
         &::after{
             display: block;
             content: "";

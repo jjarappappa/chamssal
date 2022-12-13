@@ -21,7 +21,7 @@ function YoutubePage() {
     return instance.get("/youtube");
   };
 
-  const youtubeQuery = useQuery("youtubeData", getYoutube);
+  const youtubeQuery = useQuery("youtube", getYoutube);
   console.log(youtubeQuery);
   // useEffect(() => {
   //   console.log(youtubeQuery);
