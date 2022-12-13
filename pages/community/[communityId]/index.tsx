@@ -5,9 +5,13 @@ import Title from "../../../components/layout/title";
 import {useEffect, useState} from "react";
 import { getFeed } from "../../../util/api/community";
 import { useQuery, useQueryClient } from "react-query";
+import { useRouter } from "next/router";
+
 const Detail: NextPage = () => {
 
-  const {data} = useQuery('getFeed', getFeed)
+  const {data} = useQuery('getFeed', () => getFeed(id));
+  const router = useRouter();
+  const { id } = router.query;
 
   return (
     <>

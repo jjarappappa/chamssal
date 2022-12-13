@@ -9,6 +9,7 @@ import { useQuery, useQueryClient } from "react-query";
 const Review:NextPage = () => {
   const {data} = useQuery('getCommunity', () => getCommunity("HUGIER"));
 
+
   useEffect(() => {
     //console.log(communityQuery);
   }, []);
@@ -25,6 +26,7 @@ const Review:NextPage = () => {
                 title={f.title}
                 name={f.username}
                 day={f.createdAt}
+                id={f.id}
               />
             ))}
           </div>

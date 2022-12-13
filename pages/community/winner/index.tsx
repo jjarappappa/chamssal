@@ -25,6 +25,7 @@ const Review:NextPage = () => {
                 title={f.title}
                 name={f.username}
                 day={f.createdAt}
+                id={f.id}
               />
             ))}
           </div>

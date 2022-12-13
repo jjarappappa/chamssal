@@ -4,10 +4,12 @@ import Link from "next/link";
 export default function Information(props: {
     day: string,
     title: string,
-    name: string
+    name: string,
+    id:number
 }) {
     return (
-        <Link href={{pathname: `/community/[id]`}}>
+        <Link href={{pathname: `/community/[id]`, query: {id : JSON.stringify(props.id)},}}
+        as={`/community/[id]`} >
         <div className={styles.comutit}>
             <div className={styles.comuinformation}>
                 <div className={styles.comuinfo}>
