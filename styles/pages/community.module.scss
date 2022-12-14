@@ -13,10 +13,11 @@
     margin-top: 20px;
 }
 .write{
-    text-align: right;
     border-radius: 10px;
+    text-align: right;
     .write_span{
         padding: 10px;
+        border-radius: 10px;
         .write_span_span{
             padding-right: 15px;
         }
@@ -26,8 +27,7 @@
         }
         &:hover{
             background-color: #CCCCCC;
-
-
+            cursor: pointer;
         }
     }
 }

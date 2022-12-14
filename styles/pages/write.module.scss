@@ -1,0 +1,61 @@
+@import '_mixins', '_variables';
+
+.Write_tit {
+    width: 100%;
+    background-color: #FAFAFA;
+    height: 100vh;
+
+    .Write_div {
+        display: flex;
+        justify-content: center;
+
+        .Write_tit_div {
+            width: 70%;
+            .Write_titletype{
+                text-align: center;
+                span{
+                    font-size: 30px;
+                    font-weight: 700;
+                }
+            }
+            .Write_top {
+                padding-top: 30px;
+                input {
+                    font-size: 25px;
+                    width: 100%;
+                    padding: 20px;
+                    border: 0;
+                    background-color: #e8e8e8;
+                    border-radius: 20px;
+                }
+                ::placeholder{
+                    font-weight: 700;
+                }
+            }
+
+            .Write_bottom {
+                padding-top: 20px;
+
+                textarea {
+                    width: 100%;
+                    font-size: 25px;
+                    min-height: 50vh;
+                    padding: 20px;
+                    border: 3px solid #e8e8e8;
+                    border-radius: 10px;
+                }
+            }
+            .Write_button{
+                padding-top: 20px;
+                button{
+                    border-radius: 10px;
+                    @include yellowBtn();
+                    width: 100%;
+                    font-size: 25px;
+                    padding: 10px;
+                    font-weight: 700;
+                }
+            }
+        }
+    }
+}

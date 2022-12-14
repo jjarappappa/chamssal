@@ -3,16 +3,16 @@ import Information from "../../../components/Information/community";
 import Header from "../../../components/layout/header";
 import styles from "../../../styles/pages/community.module.scss";
 import Title from "../../../components/layout/title";
-import {useEffect, useState} from "react";
+import { useEffect, useState } from "react";
 import { getCommunity } from "../../../util/api/community";
 import { useQuery, useQueryClient } from "react-query";
-const Review:NextPage = () => {
-  const {data} = useQuery('getCommunity', () => getCommunity("DANGCHEOMER"));
+const Review: NextPage = () => {
+  const { data } = useQuery('getCommunity', () => getCommunity("DANGCHEOMER"));
 
   useEffect(() => {
     //console.log(communityQuery);
   }, []);
-  
+
   return (
     <div className={styles.reviewall}>
       <Header />
