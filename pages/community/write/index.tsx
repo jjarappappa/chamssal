@@ -14,13 +14,19 @@ const Write: NextPage = () => {
 
     const {mutate} = useMutation( createFeed,{
         onSuccess: () => {
-            alert('게시글을 업로드 했습니다.')
-            router.push('/community/classreview')
+            alert('게시글을 업로드 했습니다.') 
+            router.push('/community/classreview') //강의 후기 페이지로 이동
         }
     })
 
-    const [request, setRequest] = useState<writeType | null>(null)
+
     
+    const [request, setRequest] = useState<writeType | null> (null)
+    
+    if(!request){
+        throw new Error('No Saved request'); //request가 없을 때 처리
+    }
+
     const handleChange = (e: React.ChangeEvent<HTMLInputElement> | React.ChangeEvent<HTMLTextAreaElement>) => {
         setRequest({
             ...request,
@@ -46,7 +52,7 @@ const Write: NextPage = () => {
                         <div className={styles.Write_button}>
                             <button onClick={(() => mutate({
                                 ...request,
-                                type: "HUGIER"
+                                type: "HUGIER" // type 넘겨줌 
                                 }))}>
                                 작성 완료
                             </button>
