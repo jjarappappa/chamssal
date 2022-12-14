@@ -9,9 +9,13 @@ import { useRef,useState } from "react";
 import { writeType } from "../../../types/community/writeType";
 
 const Write: NextPage = () => {
+
+	const router = useRouter();
+
     const {mutate} = useMutation( createFeed,{
         onSuccess: () => {
-            alert('성공')
+            alert('게시글을 업로드 했습니다.')
+            router.push('/community/classreview')
         }
     })
 

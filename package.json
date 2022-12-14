@@ -15,6 +15,7 @@
     "@mui/icons-material": "^5.10.15",
     "@mui/material": "^5.10.12",
     "@types/react-daum-postcode": "^1.6.1",
+    "@types/react-router-dom": "^5.3.3",
     "axios": "^1.2.1",
     "classnames": "^2.3.2",
     "next": "12.3.1",
@@ -26,7 +27,9 @@
     "react-icons": "^4.7.1",
     "react-query": "^3.39.2",
     "react-responsive": "^9.0.0",
+    "react-router": "^6.4.5",
     "recoil": "^0.7.6",
+    "remove": "^0.1.5",
     "sass": "^1.55.0",
     "swiper": "^8.4.5"
   },
