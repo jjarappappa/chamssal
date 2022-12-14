@@ -3,22 +3,32 @@ import Information from "../../../components/Information/community";
 import Header from "../../../components/layout/header";
 import styles from "../../../styles/pages/community.module.scss";
 import Title from "../../../components/layout/title";
-import {useEffect, useState} from "react";
+import { useEffect, useState } from "react";
 import { getCommunity } from "../../../util/api/community";
 import { useQuery, useQueryClient } from "react-query";
-const Review:NextPage = () => {
-  const {data} = useQuery('getCommunity', () => getCommunity("DANGCHEOMER"));
+import { ImPencil } from "react-icons/im";
+import Link from "next/link";
+const Review: NextPage = () => {
+  const { data } = useQuery('getCommunity', () => getCommunity("DANGCHEOMER"));
 
   useEffect(() => {
     //console.log(communityQuery);
   }, []);
-  
+
   return (
     <div className={styles.reviewall}>
       <Header />
       <div className={styles.reviewgang}>
         <div>
           <Title>당첨자 발표</Title>
+          <div className={styles.write}>
+          <Link href={{pathname: '/community/write', query: {type : JSON.stringify("DANGCHEOMER")},}}>
+              <span className={styles.write_span}>
+                <span className={styles.write_span_span}>글쓰기</span>
+                <span className={styles.write_span_pencil}><ImPencil /></span>
+              </span>
+            </Link>
+          </div>
           <div className={styles.reviewItem}>
             {data?.feedList?.map((f) => (
               <Information

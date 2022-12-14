@@ -2,24 +2,25 @@ import { NextPage } from "next";
 import Header from "../../../components/layout/header";
 import styles from "../../../styles/pages/detail.module.scss";
 import Title from "../../../components/layout/title";
-import {useEffect, useState} from "react";
+import { useState, useContext, useEffect } from "react";
 import { getFeed } from "../../../util/api/community";
 import { useQuery, useQueryClient } from "react-query";
 import { useRouter } from "next/router";
 import { IoMdSend } from "react-icons/io";
 import Comment from "../../../components/comment";
-import {useMutation} from "react-query";
-import {createComments} from "../../../util/api/community";
+import { useMutation } from "react-query";
+import { useForm } from "react-hook-form";
+import { createComments } from "../../../util/api/community";
 const Detail: NextPage = () => {
 
-  const {data} = useQuery('getFeed', () => getFeed(id));
+
+  const { data } = useQuery('getFeed', () => getFeed(id));
   const router = useRouter();
   const { id } = router.query;
+  
+  const submit = () => {
 
-
-
-  const queryClient = useQueryClient();
-
+  }
 
   return (
     <>
@@ -41,20 +42,22 @@ const Detail: NextPage = () => {
               <p className={styles.Detailbottom}>
                 {data?.content}
               </p>
-              <div className={styles.commentswrite}>
-                <input placeholder="댓글 작성"/> 
-                <button><span><IoMdSend/></span></button>
-              </div>
-              <div className={styles.comments}>
-                {  
-                  data?.commentList?.commentList?.map((c) =>(
-                    <Comment
-                      comment = {c.comment}
-                      id = {c.id}
-                      nickname = {c.user.nickname}
-                    />
-                  ))
-                }
+              <div>
+                <div className={styles.commentswrite}>
+                  <input placeholder="댓글 작성"/>
+                  <button onClick={submit}><span><IoMdSend /></span></button>
+                </div>
+                <div className={styles.comments}>
+                  {
+                    data?.commentList?.commentList?.map((c) => (
+                      <Comment
+                        comment={c.comment}
+                        id={c.id}
+                        nickname={c.user.nickname}
+                      />
+                    ))
+                  }
+                </div>
               </div>
             </div>
           </div>

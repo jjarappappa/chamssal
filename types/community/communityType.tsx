@@ -5,3 +5,6 @@ export interface communityType {
     id: number;
 }
 
+export interface commentType{
+    comment: string;
+}
