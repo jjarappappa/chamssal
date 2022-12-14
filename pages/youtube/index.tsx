@@ -22,10 +22,6 @@ function YoutubePage() {
   };
 
   const youtubeQuery = useQuery("youtube", getYoutube);
-  console.log(youtubeQuery);
-  // useEffect(() => {
-  //   console.log(youtubeQuery);
-  // }, []);
   return (
     <div className="background">
       <Head>

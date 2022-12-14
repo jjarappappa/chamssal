@@ -4,18 +4,17 @@ import Header from "../../components/layout/header";
 import Title from "../../components/layout/title";
 import LectureItem from "../../components/lecture/LectureItem";
 import styles from "../../styles/pages/lecture.module.scss";
-import { useQuery, useQueryClient } from "react-query";
+import { QueryCache, useQuery, useQueryClient } from "react-query";
 import { instance } from "../../instance/instance";
 import { lectureType } from "../../types/lecture/lectureType";
 import Link from "next/link";
 import { getLectureList } from "../../util/api/lecture";
+import { useRecoilState } from "recoil";
+import { lectureListState } from "../../store/lecture/lectureListAtom";
 
 function Lecture() {
   const { status, data, error } = useQuery("lecture", () => getLectureList());
   const queryClient = useQueryClient();
-
-  console.log(queryClient.getQueriesData("youtube"));
-
   return (
     <div className={styles.background}>
       <Head>

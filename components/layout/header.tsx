@@ -20,8 +20,6 @@ function Header() {
     document.body.style.overflow = "unset";
   }, [isMobile, setIsOpenMenu]);
 
-
-
   return (
     <>
       {isMobile === 1 ? (
@@ -78,34 +76,34 @@ function Header() {
                       component="nav"
                       aria-label="mailbox folders"
                     >
-                      <Link href='/community/eventtime'>
+                      <Link href="/community/eventtime">
                         <ListItem button sx={{ textAlign: "center" }}>
                           <ListItemText primary="이벤트" />
                         </ListItem>
                       </Link>
                       <Divider light />
 
-                      <Link href='/community/winner'>
+                      <Link href="/community/winner">
                         <ListItem button sx={{ textAlign: "center" }}>
                           <ListItemText primary="당첨자 발표" />
                         </ListItem>
                       </Link>
                       <Divider light />
-                      <Link href='/community/classreview'>
+                      <Link href="/community/classreview">
                         <ListItem button sx={{ textAlign: "center" }}>
                           <ListItemText primary="강의 후기" />
                         </ListItem>
                       </Link>
                       <Divider light />
-                      <Link href='/community/question'>
+                      <Link href="/community/question">
                         <ListItem button sx={{ textAlign: "center" }}>
                           <ListItemText primary="자주 묻는 질문" />
                         </ListItem>
                       </Link>
                       <Divider light />
-                        <ListItem button sx={{ textAlign: "center" }}>
-                          <ListItemText primary="제휴 문의" />
-                        </ListItem>
+                      <ListItem button sx={{ textAlign: "center" }}>
+                        <ListItemText primary="제휴 문의" />
+                      </ListItem>
                     </List>
                   </>
                 )}
@@ -115,11 +113,11 @@ function Header() {
               <Link href="/signup">
                 <button className={styles.login}>회원가입</button>
               </Link>
-            ) : localStorage.getItem("accessToken") ? (
+            ) : localStorage.getItem("token") ? (
               <button
                 className={styles.login}
                 onClick={() => {
-                  localStorage.removeItem("accessToken");
+                  localStorage.removeItem("token");
                   location.reload();
                 }}
               >

@@ -19,3 +19,7 @@ export const getLectureDetail = async (
 export const applyLecture = async (id: string) => {
   return await instance.post(`/lecture/${id}/apply`, null, authorization());
 };
+
+export const getLectureApplicantList = async (id: string) => {
+  return await instance.get(`/lecture/${id}/apply`);
+};
