@@ -104,6 +104,9 @@ const ClassRegist: NextPage = () => {
                             <button onClick={() => deleteFileImage()} className={styles.deletebutton_mini}> <MdDelete/> </button>
                         </div>
                     </div>
+                    <div className={styles.register_button}>
+                        <button>강의 등록 하기</button>
+                    </div>
                 </div>
             </div>
         </>

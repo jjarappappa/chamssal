@@ -8,9 +8,9 @@ import { getCommunity } from "../../../util/api/community";
 import { useQuery, useQueryClient } from "react-query";
 import { ImPencil } from "react-icons/im";
 import Link from "next/link";
+import { useRouter } from "next/router";
 const Review:NextPage = () => {
   const {data} = useQuery('getCommunity', () => getCommunity("HUGIER"));
-
 
   useEffect(() => {
     //console.log(communityQuery);
@@ -23,7 +23,7 @@ const Review:NextPage = () => {
         <div>
           <Title>강의 후기</Title>
           <div className={styles.write}>
-          <Link href='/community/write'>
+          <Link href={{pathname: '/community/write', query: {id : JSON.stringify("HUGIER")},}} >
               <span className={styles.write_span}>
                 <span className={styles.write_span_span}>글쓰기</span>
                 <span className={styles.write_span_pencil}><ImPencil/></span>

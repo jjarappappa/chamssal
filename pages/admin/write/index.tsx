@@ -1,35 +1,30 @@
-import { NextPage } from "next";
-import Header from "../../../components/layout/header";
+import React from "react";
+import Sidebar from "../../../components/layout/Sidebar";
+import Head from "next/head";
+import AdminTitle from "../../../components/layout/AdminTitle";
 import { useRouter } from "next/router";
-import styles from "../../../styles/pages/write.module.scss";
-import Title from "../../../components/layout/title";
+import styles from "../../../styles/pages/admin/write.module.scss";
 import { createFeed } from "../../../util/api/community";
-import { useQuery, useMutation, useQueryClient } from "react-query";
-import { useRef,useState } from "react";
+import { useMutation } from "react-query";
+import { useState } from "react";
 import { writeType } from "../../../types/community/writeType";
-
-const Write: NextPage = () => {
-
+function Pregnancy() {  
+    
     const router = useRouter();
-    const {type} = router.query;
-  
+    const { type } = router.query;
     console.log(type)
- 
+
     const {mutate} = useMutation( createFeed,{
         onSuccess: () => {
             alert('게시글을 업로드 했습니다.') 
-            router.push('/community/classreview') //강의 후기 페이지로 이동
+            
         }
         
     })
 
-
     
     const [request, setRequest] = useState<writeType | null> (null)
     
-    // if(!request){
-    //     throw new Error('No Saved request'); //request가 없을 때 처리
-    // }
 
     const handleChange = (e: React.ChangeEvent<HTMLInputElement> | React.ChangeEvent<HTMLTextAreaElement>) => {
         setRequest({
@@ -38,33 +33,44 @@ const Write: NextPage = () => {
         })
     }
 
-    return (
-        <>
-            <div className={styles.Write_tit}>
-                <Header />
-                <div className={styles.Write_div}>
+
+
+  return (
+    <>
+        <Head>
+            <title>게시글 등록</title>
+        </Head>
+        <Sidebar />
+        <div className="background_admin">
+            {
+                type === "EVENT" ?
+                    <AdminTitle>이벤트</AdminTitle>
+                : type === "DANGCHEOMER" ?        
+                    <AdminTitle>당첨자 발표</AdminTitle>
+                :
+                    <AdminTitle>자주 묻는 질문</AdminTitle>
+            }
+            <div className={styles.Write_div}>
                     <div className={styles.Write_tit_div}>
-                        <div className={styles.Write_titletype}>
-                            <Title>강의 후기</Title>
-                        </div>
                         <div className={styles.Write_top}>
                             <input placeholder="제목 입력" name="title" value={request?.title} onChange={handleChange}/>
                         </div>
                         <div className={styles.Write_bottom}>
-                            <textarea placeholder="내용 입력" name="content" value={request?.content} onChange={handleChange} />
+                            <textarea placeholder="내용 입력" name="content" value={request?.content} onChange={handleChange}/>
                         </div>
                         <div className={styles.Write_button}>
-                            <button onClick={(() => mutate({
+                        <button onClick={(() => mutate({
                                 ...request,
-                                type: "HUGIER" // type 넘겨줌 
-                            }))}>
+                                type: type // type 넘겨줌 
+                                }))}>
                                 작성 완료
                             </button>
                         </div>
                     </div>
                 </div>
-            </div>
-        </>
-    );
-};
-export default Write;
+        </div>
+    </>
+  );
+}
+
+export default Pregnancy;

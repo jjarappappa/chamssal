@@ -84,7 +84,7 @@ function Sidebar() {
         </div>
         <div>
           <span className={styles.item_title}>강의</span>
-          <Link href = "/admin/classregist">
+          <Link href="/admin/classregist">
             <div className={styles.item}
               style={{
                 backgroundColor:
@@ -102,18 +102,36 @@ function Sidebar() {
         </div>
         <div>
           <span className={styles.item_title}>커뮤니티</span>
-          <div className={styles.item}>
-            <TriangleIcon />
-            <span className={styles.text}>이벤트</span>
-          </div>
-          <div className={styles.item}>
-            <TriangleIcon />
-            <span className={styles.text}>당첨자 발표</span>
-          </div>
-          <div className={styles.item}>
-            <TriangleIcon />
-            <span className={styles.text}>자주 묻는 질문</span>
-          </div>
+          <Link href={{pathname: '/admin/write', query: {type : "EVENT"},}} >
+            <div className={styles.item}
+              style={{
+                backgroundColor:
+                  router.pathname === "/admin/write" ? "#F1F1F1" : "#FFF",
+              }}>
+              <TriangleIcon />
+              <span className={styles.text}>이벤트</span>
+            </div>
+          </Link>
+          <Link href={{pathname: '/admin/write', query: {type : "DANGCHEOMER"},}} >
+            <div className={styles.item}
+              style={{
+                backgroundColor:
+                  router.pathname === "/admin/write" ? "#F1F1F1" : "#FFF",
+              }}>
+              <TriangleIcon />
+              <span className={styles.text}>당첨자 발표</span>
+            </div>
+          </Link>
+          <Link href={{pathname: '/admin/write', query: {type : "QUESTION"},}} >
+            <div className={styles.item}
+              style={{
+                backgroundColor:
+                  router.pathname === "/admin/write" ? "#F1F1F1" : "#FFF",
+              }}>
+              <TriangleIcon />
+              <span className={styles.text}>자주 묻는 질문</span>
+            </div>
+          </Link>
         </div>
       </div>
     </div>
