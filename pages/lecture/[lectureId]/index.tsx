@@ -17,9 +17,7 @@ function LectureContent() {
   const { data } = useQuery(`lecture/${id}`, () =>
     getLectureDetail(router, id)
   );
-  // const isMobile = useMedia("(min-width: 1188px)");
-  console.log(data);
-  // console.log(isMobile);
+  
   const applyMutation = useMutation(() => applyLecture(data?.data.id));
   return (
     <div className="background">
@@ -49,10 +47,10 @@ function LectureContent() {
           <LectureLabel>강사</LectureLabel>
           <span className={styles.item}>{data?.data.teacher}</span>
         </div>
-        {/* <div className={styles.lecture_info_inline}>
+        <div className={styles.lecture_info_inline}>
           <LectureLabel>당첨자 발표</LectureLabel>
-          <span className={styles.item}>2022.12.15</span>
-        </div> */}
+          <span className={styles.item}>{data?.data.luckyDate}</span>
+        </div>
         <hr />
       </div>
       <div className={styles.content}>{data?.data.content}</div>

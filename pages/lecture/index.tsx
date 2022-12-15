@@ -11,9 +11,11 @@ import Link from "next/link";
 import { getLectureList } from "../../util/api/lecture";
 import { useRecoilState } from "recoil";
 import { lectureListState } from "../../store/lecture/lectureListAtom";
+import { snackBarState } from "../../store/alert/snackBarAtom";
 
 function Lecture() {
   const { status, data, error } = useQuery("lecture", () => getLectureList());
+  const [snackBar, setSnackBar] = useRecoilState(snackBarState);
   const queryClient = useQueryClient();
   return (
     <div className={styles.background}>
@@ -22,6 +24,11 @@ function Lecture() {
       </Head>
       <Header />
       <Title>강의 신청</Title>
+      <button
+        onClick={() =>
+          setSnackBar({ isOpen: true, severity: "error", message: "wow" })
+        }
+      >눌러</button>
       <div className={styles.lecture}>
         {status === "success" &&
           data?.data.lectureList?.map((item: lectureType) => {
