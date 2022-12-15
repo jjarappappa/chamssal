@@ -15,6 +15,8 @@ import { commentType } from "../../../types/community/commentType";
 const Detail: NextPage = () => {
 
   const { data } = useQuery('getFeed', () => getFeed(id));
+
+
   const router = useRouter();
   const { id } = router.query;
 
@@ -22,8 +24,7 @@ const Detail: NextPage = () => {
 
   const {mutate} = useMutation( createComments, {
     onSuccess: () => {
-        alert('댓글 작성 완료') 
-        router.push(`/community/${id}`) //새로고침 수정필요
+        alert('댓글 작성 완료')
     }
 })
 
