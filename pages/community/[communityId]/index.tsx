@@ -18,8 +18,9 @@ const Detail: NextPage = () => {
   const router = useRouter();
   const { id } = router.query;
 
+  console.log(id)
 
-  const {mutate} = useMutation( createComments,{
+  const {mutate} = useMutation( createComments, {
     onSuccess: () => {
         alert('댓글 작성 완료') 
         router.push(`/community/${id}`) //새로고침 수정필요
@@ -60,7 +61,7 @@ const handleChange = (e: React.ChangeEvent<HTMLInputElement> | React.ChangeEvent
               </p>
               <div>
                 <div className={styles.commentswrite}>
-                  <input placeholder="댓글 작성" name="content" value={request?.content} onChange={handleChange}/>
+                  <input placeholder="댓글 작성" name="comment" value={request?.comment} onChange={handleChange}/>
                   <button onClick={(() => mutate({
                     ...request, 
                   }))}><span><IoMdSend /></span></button>

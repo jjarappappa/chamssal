@@ -8,7 +8,7 @@ export default function Information(props: {
     id:number
 }) {
     return (
-        <Link href={{pathname: `/community/[id]`, query: {id : JSON.stringify(props.id)},}}
+        <Link href={{pathname: `/community/[id]`, query: {id : props.id},}}
         as={`/community/[id]`} >
         <div className={styles.comutit}>
             <div className={styles.comuinformation}>

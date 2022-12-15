@@ -20,6 +20,6 @@ export const createFeed = async(request: writeType) : Promise<any> => {
 }
 
 
-export const createComments = async(request: commentType, id: number) : Promise<any> => {
-    return (await instance.post(`/feed/${id}`, request, authorization())).data
+export const createComments = async(request: commentType) : Promise<any> => {
+    return (await instance.post(`/feed/1`, request, authorization())).data
 }

@@ -11,7 +11,7 @@ import { writeType } from "../../../types/community/writeType";
 function Pregnancy() {  
     
     const router = useRouter();
-    const { type } = router.query;
+    const { type }:any = router.query;
     console.log(type)
 
     const {mutate} = useMutation( createFeed,{
