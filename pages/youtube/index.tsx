@@ -6,16 +6,10 @@ import YoutubeData from "../../components/youtube/youtube.json";
 import styles from "../../styles/pages/youtube.module.scss";
 import { useQuery, useQueryClient } from "react-query";
 import { instance } from "../../instance/instance";
-import { youtubeType } from "../../types/youtube/youtubeType";
+import { getYoutube } from "../../util/api/Yotube";
 
 function YoutubePage() {
   const queryClient = useQueryClient();
-
-  // const getYoutube = async (): Promise<youtubeType> => {
-  //   const response = await instance.get<youtubeType>("/youtube");
-  //   console.log(response);
-  //   return response;
-  // };
 
   const getYoutube = () => {
     return instance.get("/youtube");
