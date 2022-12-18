@@ -2,17 +2,18 @@ import { NextPage } from "next";
 import Header from "../../../components/layout/header";
 import styles from "../../../styles/pages/detail.module.scss";
 import Title from "../../../components/layout/title";
-import {useEffect, useState} from "react";
+import { useEffect, useState } from "react";
 import { getFeed } from "../../../util/api/community";
 import { useQuery, useQueryClient } from "react-query";
 import { useRouter } from "next/router";
 
 const Detail: NextPage = () => {
-
-  const {data} = useQuery('getFeed', () => getFeed(id));
   const router = useRouter();
-  const { id } = router.query;
-
+  const { communityId } = router.query;
+  console.log(router);
+  const { data } = useQuery("getFeed", () => getFeed(communityId), {
+    enabled: router.isReady,
+  });
   return (
     <>
       <Header />
