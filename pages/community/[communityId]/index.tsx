@@ -64,7 +64,7 @@ const handleChange = (e: React.ChangeEvent<HTMLInputElement> | React.ChangeEvent
                 <div className={styles.commentswrite}>
                   <input placeholder="댓글 작성" name="comment" value={request?.comment} onChange={handleChange}/>
                   <button onClick={(() => mutate({
-                    ...request, 
+                    ...request
                   }))}><span><IoMdSend /></span></button>
                 </div>
                 <div className={styles.comments}>
