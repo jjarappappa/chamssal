@@ -17,6 +17,8 @@ function Lecture() {
   const { status, data, error } = useQuery("lecture", () => getLectureList());
   const [snackBar, setSnackBar] = useRecoilState(snackBarState);
   const queryClient = useQueryClient();
+  console.log(data);
+  
   return (
     <div className={styles.background}>
       <Head>
@@ -28,7 +30,9 @@ function Lecture() {
         onClick={() =>
           setSnackBar({ isOpen: true, severity: "error", message: "wow" })
         }
-      >눌러</button>
+      >
+        눌러
+      </button>
       <div className={styles.lecture}>
         {status === "success" &&
           data?.data.lectureList?.map((item: lectureType) => {

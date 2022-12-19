@@ -13,6 +13,7 @@ import {
 } from "../../../../types/lecture/lectureType";
 import LectureApplicant from "../../../../components/lecture/LectureApplicant";
 import styles from "../../../../styles/pages/admin/lectureApplicant.module.scss";
+import { FormControl, InputLabel, MenuItem, Select } from "@mui/material";
 
 function Applicant() {
   const queryClient = useQueryClient();
@@ -44,21 +45,39 @@ function Applicant() {
       <Sidebar />
       <div className="background_admin">
         <AdminTitle>강의 신청자 정보 조회</AdminTitle>
-        <select
-          onChange={(e: React.ChangeEvent<HTMLSelectElement>) =>
-            setLectureId(e.target.value)
-          }
-          className={styles.select}
+        <FormControl
+          sx={{
+            display: "block",
+            marginRight: "0",
+            marginLeft: "calc(100% - 200px)",
+            backgroundColor: "white",
+          }}
         >
-          <option value={"0"}>강의 선택</option>
-          {lectureListResult.data?.data.lectureList.map((item: lectureType) => {
-            return (
-              <option value={item.id} key={item.id}>
-                {item.title}
-              </option>
-            );
-          })}
-        </select>
+          <InputLabel id="demo-simple-select-label">강의</InputLabel>
+          <Select
+            labelId="demo-simple-select-label"
+            id="demo-simple-select"
+            value={lectureId}
+            label="강의"
+            onChange={(e) => setLectureId(e.target.value)}
+            sx={{
+              width: "200px",
+              height: "60px",
+              fontSize: "16px",
+              borderRadius: "10px",
+            }}
+          >
+            {lectureListResult.data?.data.lectureList.map(
+              (item: lectureType) => {
+                return (
+                  <MenuItem value={item.id} key={item.id}>
+                    {item.title}
+                  </MenuItem>
+                );
+              }
+            )}
+          </Select>
+        </FormControl>
         <div className={styles.applicantList}>
           {lectureId === "0" ? (
             <h1>강의를 선택하세요!</h1>
