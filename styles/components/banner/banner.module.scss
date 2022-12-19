@@ -1,16 +1,22 @@
 .slider {
-    text-align: center;
-    margin: 0px auto 0;
+  text-align: center;
+  margin: 0 auto 0;
 }
+
 .slider .inner {
 }
-.slider{
+
+.slider {
 }
-.bannere{
-    padding: 20px 20px;  
+
+.bannere {
+  //padding: 20px 20px;
 }
-.bannerimage{
-    border-radius: 30px;
+
+.bannerimage {
+  object-fit: cover;
+  border-radius: 30px;
 }
-.bannerswiper{
+
+.bannerswiper {
 }

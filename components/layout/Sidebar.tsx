@@ -117,7 +117,7 @@ function Sidebar() {
             <div className={styles.item}
               style={{
                 backgroundColor:
-                  router.pathname === "/admin/write" ? "#F1F1F1" : "#FFF",
+                  router.pathname === "/admin/write" && router.query?.type === "EVENT" ? "#F1F1F1" : "#FFF",
               }}>
               <TriangleIcon />
               <span className={styles.text}>이벤트</span>
@@ -127,7 +127,7 @@ function Sidebar() {
             <div className={styles.item}
               style={{
                 backgroundColor:
-                  router.pathname === "/admin/write" ? "#F1F1F1" : "#FFF",
+                  router.pathname === "/admin/write" && router.query?.type === "DANGCHEOMER" ? "#F1F1F1" : "#FFF",
               }}>
               <TriangleIcon />
               <span className={styles.text}>당첨자 발표</span>
@@ -137,7 +137,7 @@ function Sidebar() {
             <div className={styles.item}
               style={{
                 backgroundColor:
-                  router.pathname === "/admin/write" ? "#F1F1F1" : "#FFF",
+                  router.pathname === "/admin/write" && router.query?.type === "QUESTION" ? "#F1F1F1" : "#FFF",
               }}>
               <TriangleIcon />
               <span className={styles.text}>자주 묻는 질문</span>
