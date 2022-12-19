@@ -10,7 +10,7 @@ import { IoMdSend } from "react-icons/io";
 import Comment from "../../../components/comment";
 import { useMutation } from "react-query";
 import { useForm } from "react-hook-form";
-import { createComments } from "../../../util/api/community";
+// import { createComments } from "../../../util/api/community";
 import { commentType } from "../../../types/community/commentType";
 const Detail: NextPage = () => {
 
@@ -20,13 +20,13 @@ const Detail: NextPage = () => {
   const router = useRouter();
   const { id } = router.query;
 
-  console.log(id)
+//   console.log(id)
 
-  const {mutate} = useMutation( createComments, {
-    onSuccess: () => {
-        alert('댓글 작성 완료')
-    }
-})
+//   const {mutate} = useMutation( createComments, {
+//     onSuccess: () => {
+//         alert('댓글 작성 완료')
+//     }
+// })
 
 
 const [request, setRequest] = useState<commentType | null> (null)
@@ -63,9 +63,11 @@ const handleChange = (e: React.ChangeEvent<HTMLInputElement> | React.ChangeEvent
               <div>
                 <div className={styles.commentswrite}>
                   <input placeholder="댓글 작성" name="comment" value={request?.comment} onChange={handleChange}/>
-                  <button onClick={(() => mutate({
+                  {/* <button onClick={(() => mutate({
                     ...request,
-                  }))}><span><IoMdSend /></span></button>
+                  }))}> */}
+                    <button>
+                    <span><IoMdSend /></span></button>
                 </div>
                 <div className={styles.comments}>
                   {

@@ -87,7 +87,7 @@ function Sidebar() {
         </div>
         <div>
           <span className={styles.item_title}>강의</span>
-          <Link href="/admin/classregist">
+          <Link href="/admin/lecture">
             <div className={styles.item}
               style={{
                 backgroundColor:
