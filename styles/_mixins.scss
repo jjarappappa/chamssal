@@ -26,7 +26,7 @@
 
 @mixin input($width: 320px, $align: left, $left: 20px) {
     width: $width;
-    height: 78px;
+    height: 60px;
     background-color: $lightgray !important;
     border: none;
     text-align: $align;
