@@ -4,7 +4,7 @@ import { atom } from "recoil";
 
 interface SnackBar {
   isOpen: boolean;
-  message: string | FieldError | Merge<FieldError, FieldErrorsImpl<any>> | undefined;
+  message: string;
   severity: AlertColor | undefined;
 }
 

@@ -28,8 +28,7 @@ const Login: NextPage = () => {
 
   useEffect(() => {
     if (loginMutation.status === "success") {
-      console.log("asdf");
-      localStorage.setItem("accessToken", loginMutation.data?.data.accessToken);
+      localStorage.setItem("token", loginMutation.data?.data.accessToken);
       router.push("/");
     }
   }, [loginMutation, router]);

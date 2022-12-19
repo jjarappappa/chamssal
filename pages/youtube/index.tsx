@@ -21,11 +21,7 @@ function YoutubePage() {
     return instance.get("/youtube");
   };
 
-  const youtubeQuery = useQuery("youtubeData", getYoutube);
-  console.log(youtubeQuery);
-  // useEffect(() => {
-  //   console.log(youtubeQuery);
-  // }, []);
+  const youtubeQuery = useQuery("youtube", getYoutube);
   return (
     <div className="background">
       <Head>

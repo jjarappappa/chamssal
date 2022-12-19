@@ -10,7 +10,11 @@ function SnackBar() {
     <Snackbar
       open={snackbar.isOpen}
       autoHideDuration={3000}
-      // TransitionComponent={Slide}
+      sx={{
+        position: "absolute",
+        bottom: "20px",
+        width: "calc(100% - 50px)",
+      }}
       onClose={() =>
         setSnackbar({
           ...snackbar,
@@ -22,7 +26,8 @@ function SnackBar() {
       <Alert
         onClose={() =>
           setSnackbar({
-            ...snackbar,
+            severity: "error",
+            message: "wow",
             isOpen: false,
           })
         }

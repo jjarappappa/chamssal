@@ -4,6 +4,5 @@ export interface signupType {
   email: string;
   name: string;
   nickname: string;
-  password: string;
   phoneNumber: string;
 }

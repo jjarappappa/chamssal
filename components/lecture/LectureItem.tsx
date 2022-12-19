@@ -6,8 +6,11 @@ import styles from "../../styles/components/lecture/lectureitem.module.scss";
 function LectureItem({ data }: { data: any }) {
   return (
     <Link
-      href={{ pathname: `/lecture/[id]`, query: { data: JSON.stringify(data) } }}
-      as={`/lecture/1`}
+      href={{
+        pathname: `/lecture/[lectureId]`,
+        query: { data: JSON.stringify(data) },
+      }}
+      as={`/lecture/${data.id}`}
     >
       <div className={styles.lecture}>
         <div className={styles.img}>
@@ -21,10 +24,10 @@ function LectureItem({ data }: { data: any }) {
           />
         </div>
         <div className={styles.items}>
-          <span className={styles.location}>지역</span>
-          <h3 className={styles.title}>제목</h3>
+          <span className={styles.location}>{data.place}</span>
+          <h3 className={styles.title}>{data.title}</h3>
           <div className={styles.bottom}>
-            <span className={styles.date}>0000-00-00</span>
+            <span className={styles.date}>{data.date}</span>
             <span className={styles.d_day}>D-33</span>
           </div>
         </div>
