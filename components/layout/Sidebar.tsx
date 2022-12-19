@@ -8,7 +8,6 @@ import { useRouter } from "next/router";
 
 function Sidebar() {
   const router = useRouter();
-  console.log(router);
   return (
     <div className={styles.sidebar}>
       <span className={styles.logo}>
@@ -51,7 +50,9 @@ function Sidebar() {
               className={styles.item}
               style={{
                 backgroundColor:
-                  router.pathname === "/admin/info/pregnancy" ? "#F1F1F1" : "#FFF",
+                  router.pathname === "/admin/info/pregnancy"
+                    ? "#F1F1F1"
+                    : "#FFF",
               }}
             >
               <TriangleIcon />
@@ -63,7 +64,9 @@ function Sidebar() {
               className={styles.item}
               style={{
                 backgroundColor:
-                  router.pathname === "/admin/info/parenting" ? "#F1F1F1" : "#FFF",
+                  router.pathname === "/admin/info/parenting"
+                    ? "#F1F1F1"
+                    : "#FFF",
               }}
             >
               <TriangleIcon />
@@ -88,17 +91,25 @@ function Sidebar() {
             <div className={styles.item}
               style={{
                 backgroundColor:
-                  router.pathname === "/admin/classregist" ? "#F1F1F1" : "#FFF",
+                  router.pathname === "/admin/lecture" ? "#F1F1F1" : "#FFF",
               }}
             >
               <TriangleIcon />
               <span className={styles.text}>등록</span>
             </div>
           </Link>
-          <div className={styles.item}>
-            <TriangleIcon />
-            <span className={styles.text}>신청자 정보</span>
-          </div>
+          <Link href="/admin/lecture/applicant">
+            <div
+              className={styles.item}
+              style={{
+                backgroundColor:
+                  router.pathname === "/admin/lecture/applicant" ? "#F1F1F1" : "#FFF",
+              }}
+            >
+              <TriangleIcon />
+              <span className={styles.text}>신청자 정보</span>
+            </div>
+          </Link>
         </div>
         <div>
           <span className={styles.item_title}>커뮤니티</span>

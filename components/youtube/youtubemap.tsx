@@ -1,8 +1,8 @@
 import Image from "next/image";
 import Link from "next/link";
 import styles from "../../styles/components/youtube/youtubemap.module.scss";
-import YoutubeType from "./YoutubeType";
-function Youtubemap(props: YoutubeType) {
+import {YoutubeResponse} from "./YoutubeType";
+function Youtubemap(props: YoutubeResponse) {
   return (
     <Link href={props.url}>
       <div className={styles.youtubecomponent}>

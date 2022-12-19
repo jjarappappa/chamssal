@@ -16,6 +16,12 @@
     &:hover {
         background-color: gold;
     }
+
+    &:disabled {
+        background-color: khaki;
+        cursor: default;
+
+    }
 }
 
 @mixin input($width: 320px, $align: left, $left: 20px) {
