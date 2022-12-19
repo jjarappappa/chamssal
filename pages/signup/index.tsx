@@ -1,4 +1,4 @@
-import React, { useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { Postcode } from "../../components/buttons/Postcode";
 import Header from "../../components/layout/header";
 import { useRecoilState } from "recoil";
@@ -15,6 +15,7 @@ import { useQuery, useMutation, useQueryClient } from "react-query";
 import { ErrorMessage } from "@hookform/error-message";
 import { instance } from "../../instance/instance";
 import { signupType } from "../../types/auth/signupType";
+import { useRouter } from "next/router";
 
 function SignUp() {
   const [signUpInput, setSignUpInput] = useRecoilState(signUpInputState);
@@ -31,6 +32,8 @@ function SignUp() {
   } = useForm();
 
   const queryClient = useQueryClient();
+
+  const router = useRouter();
 
   const joinUser = async (data: signupType): Promise<signupType> => {
     const response = await instance.post<signupType>("/user", data);
@@ -58,6 +61,13 @@ function SignUp() {
     setDomain(newDomain);
     setIsOpenSelect(false);
   };
+
+  useEffect(() => {
+    if (signUpMutation.isSuccess) {
+      alert("가입성공!");
+      router.push("/login");
+    }
+  }, [signUpMutation.status]);
 
   return (
     <div className={styles.background}>
