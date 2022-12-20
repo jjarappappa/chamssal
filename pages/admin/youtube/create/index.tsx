@@ -6,6 +6,7 @@ import Sidebar from "../../../../components/layout/Sidebar";
 import AdminTitle from "../../../../components/layout/AdminTitle";
 import styles from "../../../../styles/pages/admin/write.module.scss";
 import {createYoutube} from "../../../../util/api/Yotube";
+import {CreateYoutubeRequest} from "../../../../types/youtube/CreateYoutubeRequest";
 
 function CreateYoutube() {
     const {mutate} = useMutation(createYoutube, {
@@ -16,7 +17,7 @@ function CreateYoutube() {
     })
 
 
-    const [request, setRequest] = useState<writeType | null>(null)
+    const [request, setRequest] = useState<CreateYoutubeRequest | null>(null)
 
 
     const handleChange = (e: ChangeEvent<HTMLInputElement> | ChangeEvent<HTMLTextAreaElement>) => {
@@ -41,7 +42,7 @@ function CreateYoutube() {
                             <input placeholder="제목 입력" name="title" value={request?.title} onChange={handleChange}/>
                         </div>
                         <div className={styles.Write_top}>
-                            <input placeholder="링크 입력" name="url" value={request?.content}
+                            <input placeholder="링크 입력" name="url" value={request?.url}
                                    onChange={handleChange}/>
                         </div>
                         <div className={styles.Write_button}>
