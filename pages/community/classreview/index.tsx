@@ -15,7 +15,7 @@ const Review:NextPage = () => {
   useEffect(() => {
     //console.log(communityQuery);
   }, []);
-  
+
   return (
     <div className={styles.reviewall}>
       <Header />
@@ -23,7 +23,7 @@ const Review:NextPage = () => {
         <div>
           <Title>강의 후기</Title>
           <div className={styles.write}>
-          <Link href={{pathname: '/community/write', query: {id : JSON.stringify("HUGIER")},}} >
+          <Link href={{pathname: '/community/create', query: {id : JSON.stringify("HUGIER")},}} >
               <span className={styles.write_span}>
                 <span className={styles.write_span_span}>글쓰기</span>
                 <span className={styles.write_span_pencil}><ImPencil/></span>
