@@ -26,13 +26,6 @@ function Lecture() {
       </Head>
       <Header />
       <Title>강의 신청</Title>
-      {/* <button
-        onClick={() =>
-          setSnackBar({ isOpen: true, severity: "error", message: "wow" })
-        }
-      >
-        눌러
-      </button> */}
       <div className={styles.lecture}>
         {status === "success" &&
           data?.data.lectureList?.map((item: lectureType) => {
