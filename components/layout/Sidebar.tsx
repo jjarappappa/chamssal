@@ -82,10 +82,12 @@ function Sidebar() {
                             <span className={styles.text}>등록</span>
                         </div>
                     </Link>
-                    <div className={styles.item}>
-                        <TriangleIcon/>
-                        <span className={styles.text}>동영상 강좌 정보</span>
-                    </div>
+                    <Link href="/admin/youtube/info">
+                        <div className={styles.item}>
+                            <TriangleIcon/>
+                            <span className={styles.text}>동영상 강좌 정보</span>
+                        </div>
+                    </Link>
                 </div>
                 <div>
                     <span className={styles.item_title}>강의</span>
