@@ -1,7 +1,5 @@
-import { NextRouter } from "next/router";
-import { instance } from "../../instance/instance";
-import { lectureType } from "../../types/lecture/lectureType";
-import { authorization } from "../config/authorization";
+import {instance} from "../../instance/instance";
+import {authorization} from "../config/authorization";
 
 export const getLectureList = async () => {
   return await instance.get("/lecture");
