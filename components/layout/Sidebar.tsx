@@ -77,13 +77,27 @@ function Sidebar() {
                 <div>
                     <span className={styles.item_title}>동영상 강좌</span>
                     <Link href="/admin/youtube/create">
-                        <div className={styles.item}>
+                        <div className={styles.item}
+                             style={{
+                                 backgroundColor:
+                                     router.pathname === "/admin/youtube/create"
+                                         ? "#F1F1F1"
+                                         : "#FFF",
+                             }}
+                        >
                             <TriangleIcon/>
                             <span className={styles.text}>등록</span>
                         </div>
                     </Link>
                     <Link href="/admin/youtube/info">
-                        <div className={styles.item}>
+                        <div className={styles.item}
+                             style={{
+                                 backgroundColor:
+                                     router.pathname === "/admin/youtube/info"
+                                         ? "#F1F1F1"
+                                         : "#FFF",
+                             }}
+                        >
                             <TriangleIcon/>
                             <span className={styles.text}>동영상 강좌 정보</span>
                         </div>
@@ -117,31 +131,31 @@ function Sidebar() {
                 </div>
                 <div>
                     <span className={styles.item_title}>커뮤니티</span>
-                    <Link href={{pathname: '/admin/create', query: {type: "EVENT"},}}>
+                    <Link href={{pathname: '/admin/write', query: {type: "EVENT"},}}>
                         <div className={styles.item}
                              style={{
                                  backgroundColor:
-                                     router.pathname === "/admin/create" && router.query?.type === "EVENT" ? "#F1F1F1" : "#FFF",
+                                     router.pathname === "/admin/write" && router.query?.type === "EVENT" ? "#F1F1F1" : "#FFF",
                              }}>
                             <TriangleIcon/>
                             <span className={styles.text}>이벤트</span>
                         </div>
                     </Link>
-                    <Link href={{pathname: '/admin/create', query: {type: "DANGCHEOMER"},}}>
+                    <Link href={{pathname: '/admin/write', query: {type: "DANGCHEOMER"},}}>
                         <div className={styles.item}
                              style={{
                                  backgroundColor:
-                                     router.pathname === "/admin/create" && router.query?.type === "DANGCHEOMER" ? "#F1F1F1" : "#FFF",
+                                     router.pathname === "/admin/write" && router.query?.type === "DANGCHEOMER" ? "#F1F1F1" : "#FFF",
                              }}>
                             <TriangleIcon/>
                             <span className={styles.text}>당첨자 발표</span>
                         </div>
                     </Link>
-                    <Link href={{pathname: '/admin/create', query: {type: "QUESTION"},}}>
+                    <Link href={{pathname: '/admin/write', query: {type: "QUESTION"},}}>
                         <div className={styles.item}
                              style={{
                                  backgroundColor:
-                                     router.pathname === "/admin/create" && router.query?.type === "QUESTION" ? "#F1F1F1" : "#FFF",
+                                     router.pathname === "/admin/write" && router.query?.type === "QUESTION" ? "#F1F1F1" : "#FFF",
                              }}>
                             <TriangleIcon/>
                             <span className={styles.text}>자주 묻는 질문</span>
