@@ -1,7 +1,6 @@
-import { NextRouter } from "next/router";
-import { instance } from "../../instance/instance";
-import { lectureType } from "../../types/lecture/lectureType";
-import { authorization } from "../config/authorization";
+import {instance} from "../../instance/instance";
+import {authorization} from "../config/authorization";
+import {CreateLectureRequest} from "../../types/lecture/CreateLectureRequest";
 
 export const getLectureList = async () => {
   return await instance.get("/lecture");
@@ -16,6 +15,11 @@ export const getLectureApplicantList = async (
 ) => {
   return await instance.get(`/lecture/${id}/apply`);
 };
+
+export const createLecture = async (request: CreateLectureRequest) => {
+  console.log(request)
+  return (await instance.post('/lecture', request, authorization()));
+}
 
 export const applyLecture = async (id: string) => {
   return await instance.post(`/lecture/${id}/apply`, null, authorization());

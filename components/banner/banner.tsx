@@ -22,8 +22,8 @@ const Banner = () => {
               <Image
                 src={b.img}
                 className={styles.bannerimage}
-                height={350}
-                width={1000}
+                height={400}
+                width={1200}
               />
             </span>
           </SwiperSlide>

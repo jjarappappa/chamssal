@@ -7,7 +7,7 @@ import { useEffect, useState } from "react";
 import { getCommunity } from "../../../util/api/community";
 import { useQuery, useQueryClient } from "react-query";
 const Review: NextPage = () => {
-  const { data } = useQuery("getCommunity", () => getCommunity("DANGCHEOMER"));
+  const { data } = useQuery('getCommunity', () => getCommunity("DANGCHEOMER"));
 
   useEffect(() => {
     //console.log(communityQuery);
